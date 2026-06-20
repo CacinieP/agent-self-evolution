@@ -114,7 +114,7 @@ def self_refine(
     task: str,
     llm: LLMFn,
     iters: int = 3,
-    stop_on_no_feedback: bool = True,
+    stop_on_no_feedback: bool = False,
 ) -> list[Step]:
     history: list[Step] = []
     cur = generate(llm, task)
@@ -132,12 +132,26 @@ def self_refine(
     return history
 
 
-_NO_CHANGE_HINTS = ("很好", "无需", "no change", "looks good", "无需修改", "已经很")
+_NO_CHANGE_HINTS = ("很好", "无需修改", "无需再改", "no change", "looks good", "perfect", "well done")
+# 出现这些"建议性"短语,说明反馈含实质改进要求,不应早停。
+# 用短语而非单词,并尽量避免与满意表达共用子串。
+_IMPROVE_HINTS = ("建议", "应该", "可以改进", "需要改", "缺少", "不足", "问题是",
+                  "should add", "should be", "could ", "try to", "needs to",
+                  "suggest", "add more", "change the", "improve")
 
 
 def _looks_satisfied(fb: str) -> bool:
+    """判断反馈是否表示"已满意、无需再改"。
+
+    判据:含"满意"信号 且 不含任何"建议改进"短语。
+    说明:这是启发式,真实模型下早停不可靠(Self-Refine 原论文用固定轮次),
+    故 main() 默认 stop_on_no_feedback=False,此函数仅供可选优化。
+    改进词用短语形式,避免误撞(如 'no change needed' 里的 'change')。
+    """
     low = fb.lower()
-    return any(h.lower() in low for h in _NO_CHANGE_HINTS) and len(fb) < 40
+    has_no_change = any(h.lower() in low for h in _NO_CHANGE_HINTS)
+    has_improve = any(h.lower() in low for h in _IMPROVE_HINTS)
+    return has_no_change and not has_improve
 
 
 # ---------------------------------------------------------------------------

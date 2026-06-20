@@ -13,7 +13,7 @@
 - [ ] 内容放在正确目录
 - [ ] 文件命名清晰(`<year>-<keyword>`,无中文空格)
 - [ ] 若为论文:含元信息 + 维度速查表(TAXONOMY)
-- [ ] 若为论文:已在 [`surveys/papers/README.md`](../../surveys/papers/README.md) 对应表加一行
+- [ ] 若为论文:已在 [`surveys/papers/README.md`](../surveys/papers/README.md) 对应表加一行
 - [ ] 若为实验/原型:README 含可复现说明(模型/环境/依赖)
 - [ ] 引用的链接有效;未提交受版权限制的大文件
 

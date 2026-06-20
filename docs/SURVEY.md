@@ -1,7 +1,7 @@
 # Agent 自进化:从"工具使用者"到"自我改写者"
 
 > 一篇基于本仓库 48 篇文献的**带观点**综述。
-> 配套分类体系见 [`TAXONOMY.md`](./TAXONOMY.md),论文索引见 [`../surveys/papers/README.md`](../surveys/papers/README.md)。
+> 分类体系与四维框架主要参照 [A Survey of Self-Evolving Agents (2025)](../surveys/papers/2025-survey-self-evolving-agents),配套索引见 [`TAXONOMY.md`](./TAXONOMY.md) 与 [`../surveys/papers/README.md`](../surveys/papers/README.md)。
 >
 > 本文不止罗列方法,更试图回答:**这门技术真正的分水岭在哪?哪些是噪音,哪些是信号?**
 
@@ -36,7 +36,7 @@
 
 ### 1.2 Context —— 不改权重,改上下文
 
-最"轻"也最实用的进化。分两支:
+最"轻"也最实用的进化。最简形态是 [Self-Refine](../surveys/papers/2023-self-refine) ——同一模型"生成→自评→改写"三步循环,零额外依赖,是 In-Context 自进化的入门原型。其上分两支:
 
 - **记忆**: [Reflexion](../surveys/papers/2023-reflexion)(反思记忆)→ [ExpeL](../surveys/papers/2024-expeL)(经验归纳)→ [Mem0](../surveys/papers/2025-mem0)(生产级)→ [A-MEM](../surveys/papers/2025-a-mem)(自组织网络)。记忆的演进方向很清晰:**从平铺存储 → 关联网络 → 可演化的知识图**。
 - **Prompt 优化**: [APE](../surveys/papers/2023-ape) → [PromptBreeder](../surveys/papers/2024-promptbreeder)(自我指涉进化)→ [PromptAgent](../surveys/papers/2024-promptagent)(MCTS)→ [SPO](../surveys/papers/2025-spo)(自监督)。这条线工程价值高([DSPy](../surveys/papers/2024-dsp) 是基础设施),但理论新颖度低于记忆线。

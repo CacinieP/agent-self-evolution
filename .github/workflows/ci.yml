@@ -22,7 +22,24 @@ jobs:
       - name: 校验原型 mock 可运行
         run: python scripts/check_prototypes.py
 
-      - name: 校验 Markdown 链接有效性
+      - name: 校验内部相对链接(全仓)
+        run: |
+          python - <<'PY'
+          import re, pathlib, sys
+          root = pathlib.Path(".")
+          broken = []
+          for md in root.rglob("*.md"):
+              for m in re.finditer(r'\[[^\]]+\]\(([^)]+)\)', md.read_text(encoding="utf-8")):
+                  t = m.group(1).split("#")[0].split("?")[0].strip()
+                  if not t or t.startswith(("http","#","mailto:")): continue
+                  if not (md.parent / t).resolve().exists():
+                      broken.append(f"{md.relative_to(root)} -> {t}")
+          if broken:
+              print("❌ 内部断链:"); [print(" ", b) for b in sorted(set(broken))]; sys.exit(1)
+          print(f"✅ 内部相对链接全部有效(扫描 {sum(1 for _ in root.rglob('*.md'))} 个 md)")
+          PY
+
+      - name: 校验外部 Markdown 链接有效性
         uses: gaurav-nelson/github-action-markdown-link-check@v1
         with:
           use-quiet-mode: "yes"
