@@ -3,7 +3,7 @@
 > 按本仓库 [TAXONOMY](../../docs/TAXONOMY.md) 的 **What to Evolve** 四大支柱归类。
 > 命名规范:`<year>-<keyword>`。每篇一个目录,内含 `README.md`(元信息 + 维度速查)。
 
-收录数:**23**(种子集 15 + 第二批 8,持续扩充)
+收录数:**35**(种子 15 + batch2 8 + batch3 12,持续扩充)
 
 ---
 
@@ -18,6 +18,8 @@
 | [Self-Instruct](./2023-self-instruct) | 2023 | 自生成指令数据微调自身 | Model · SFT · 自生成数据 |
 | [RAGEN](./2025-ragen) | 2025 | 多轮多 Agent RL 训练 + 评估框架 | Model+Arch · RL · 信用分配 |
 | [Absolute Zero](./2025-absolute-zero) | 2025 | 单模型自出题自做题,代码验证奖励,零数据 | Model · RL · Self-Play + RLVR |
+| [TextGrad](./2024-textgrad) | 2024 | 文字反馈当"梯度",反向传播优化复合系统 | Model+Context+Arch · 文字梯度 |
+| [DigiRL](./2024-digirl) | 2024 | 真实安卓环境自主 RL 训练设备控制 Agent | Model · RL · Offline→Online |
 
 ## 📝 What: Context(上下文:记忆 + Prompt)
 
@@ -29,6 +31,10 @@
 | [Agent Workflow Memory](./2024-agent-workflow-memory) | 2024 | 归纳可复用工作流(recipe),按任务检索 | Context/Memory · Inter · Offline+Online |
 | [Mem0](./2025-mem0) | 2025 | 生产级长期记忆:抽取/合并/检索 | Context/Memory · Inter · 工程化 |
 | [DSPy](./2024-dsp) | 2023 | 声明式 LM 程序 + 自动 prompt 优化 | Context/Prompt · Inter · 自动指标 |
+| [APE](./2023-ape) | 2023 | 输入-输出样例合成指令,筛最优 prompt | Context/Prompt · Inter · 程序合成 |
+| [PromptBreeder](./2024-promptbreeder) | 2024 | 进化任务提示 + 变异提示,自我指涉 | Context/Prompt · Inter · Evolutionary |
+| [SPO](./2025-spo) | 2025 | 仅模型自反馈(无真值)优化 prompt | Context/Prompt · Inter · 自监督 |
+| [PromptAgent](./2024-promptagent) | 2024 | MCTS 战略规划产出专家级 prompt | Context/Prompt · Inter · MCTS |
 | [Voyager](./2023-voyager) | 2023 | 终身学习 + 可复用代码技能库 | Tool + Memory · Inter · ICL |
 
 ## 🔧 What: Tool(工具创造 / 掌握 / 选择)
@@ -36,6 +42,7 @@
 | 论文 | 年份 | 一句话 | 维度速查 |
 |---|---|---|---|
 | [Voyager](./2023-voyager) | 2023 | 写代码技能并存进技能库(交叉见 Context) | Tool(Create/Master) |
+| [CREATOR](./2023-creator) | 2023 | LLM 自己造工具:抽象设计 + 代码实现 | Tool(Create) |
 
 ## 🏗 What: Architecture(单 / 多 Agent 系统级进化)
 
@@ -46,6 +53,22 @@
 | [Darwin Gödel Machine](./2025-darwin-godel-machine) | 2025 | 开放式进化重写自身代码自我改进 | Arch · Inter · Open-ended |
 | [Mobile-Agent-E](./2025-mobile-agent-e) | 2025 | 分层多 Agent + 长期记忆,移动任务自进化 | Arch+Memory · Inter · GUI |
 | [WebEvolver](./2025-webevolver) | 2025 | 协同进化世界模型提升 Web Agent 自训练 | Model+Context · Inter · Coevolution |
+| [GPTSwarm](./2024-gptswarm) | 2024 | 多 Agent 建模为可优化计算图,自动调节点/边 | Arch(Multi-Agent) · Inter · Search |
+
+## 🛡 What: Safety(自进化特有的安全 / 对齐风险)
+
+| 论文 | 年份 | 一句话 | 维度速查 |
+|---|---|---|---|
+| [Alignment Tipping Process (ATP)](./2025-atp-alignment-tipping) | 2025 | 持续自进化侵蚀对齐,Agent 滑向不对齐 | Safety · 部署期 · 对齐漂移 |
+
+## 🏥 What: Specialized Domain(专属域自进化)
+
+| 论文 | 年份 | 域 | 一句话 |
+|---|---|---|---|
+| [Agent Hospital](./2024-agent-hospital) | 2024 | Medical | 虚拟医院,医生 Agent 从诊疗经验中自主进化 |
+| [Mobile-Agent-E](./2025-mobile-agent-e) | 2025 | GUI/Mobile | (交叉见 Arch) |
+| [DigiRL](./2024-digirl) | 2024 | GUI/Device | (交叉见 Model) |
+| [WebEvolver](./2025-webevolver) | 2025 | Web | (交叉见 Arch) |
 
 ## 📖 Surveys(综述)
 
@@ -56,27 +79,41 @@
 
 ## 📊 Benchmarks(评测基准)
 
-| 论文 | 年份 | 域 |
-|---|---|---|
-| [SWE-bench](./2023-swe-bench) | 2023 | Coding(真实 GitHub issue) |
-| [AgentBench](./2023-agentbench) | 2023 | General(综合多环境) |
+| 论文 | 年份 | 域 | 侧重 |
+|---|---|---|---|
+| [SWE-bench](./2023-swe-bench) | 2023 | Coding | 真实 GitHub issue |
+| [AgentBench](./2023-agentbench) | 2023 | General | 综合多环境 |
+| [GAIA](./2023-gaia) | 2023 | General | 真实世界多步任务 |
+| [LifelongAgentBench](./2025-lifelongagentbench) | 2025 | General | 终身学习 / 抗遗忘 |
 
 ---
 
 ## 🗺 收录分布速览
 
 ```
-支柱:    Model    ████████████ 7
-         Context  ██████████████ 7  (Voyager 与 Tool 交叉)
-         Tool     ██ 1              (Voyager)
-         Arch     ██████████ 5      (ADAS/AFlow/DGM/Mobile-E/WebEvolver)
-类型:    方法 19 · 综述 2 · 基准 2
-年份:    2022 ×1 · 2023 ×7 · 2024 ×8 · 2025 ×7
+支柱:    Model     ██████████████ 9
+         Context   ███████████████████ 11  (含 Prompt 优化 5 + 记忆 5 + Voyager)
+         Tool      ███ 2               (Voyager, CREATOR)
+         Arch      ████████ 6          (ADAS/AFlow/DGM/Mobile-E/WebEvolver/GPTSwarm)
+         Safety    █ 1                 (ATP)
+         域专属     4(医疗/GUI/Web,多与他类交叉)
+类型:    方法 29 · 综述 2 · 基准 4
+年份:    2022 ×2 · 2023 ×9 · 2024 ×12 · 2025 ×12
 ```
+
+## ✅ 覆盖体检(对照 TAXONOMY 声明的代表工作)
+
+- Prompt 优化:APE/PromptBreeder/SPO/PromptAgent/DSPy ✅
+- 工具:Voyager/CREATOR ✅(SkillWeaver/ToolGen 待补)
+- 多 Agent 架构:GPTSwarm/ADAS ✅(AutoFlow/MaAS 待补)
+- RL 训练:TextGrad/DigiRL/RAGEN/AgentTuning ✅(SCoRe/Math-Shepherd 待补)
+- 安全:ATP ✅(Agent-SafetyBench 待补)
+- 终身学习评测:LifelongAgentBench ✅
+- 域:医疗(Agent Hospital)/ GUI / Web ✅(金融/教育待补)
 
 ## ➕ 如何补充
 
-1. 新建目录 `<year>-<keyword>`(如 `2025-mem0`)。
+1. 新建目录 `<year>-<keyword>`(如 `2025-skillweaver`)。
 2. 复制任一现有 `README.md` 作为模板,填元信息与维度速查。
 3. 在本索引表里加一行,归到对应支柱。
 4. 详见 [`CONTRIBUTING.md`](../../CONTRIBUTING.md)。
