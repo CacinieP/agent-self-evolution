@@ -169,11 +169,18 @@ def reflexion(task: str, llm: LLMFn, trials: int, tests: list[tuple[str, bool]])
 
 def main() -> None:
     p = argparse.ArgumentParser(description="Reflexion 最小可运行原型(环境反馈版)")
-    p.add_argument("--task", required=True, help="编程任务描述")
+    p.add_argument("--task", help="编程任务描述(--selftest 时可省)")
     p.add_argument("--trials", type=int, default=3)
     p.add_argument("--model", default="gpt-4o-mini")
     p.add_argument("--mock", action="store_true")
+    p.add_argument("--selftest", action="store_true", help="内置示例自测(强制 mock)")
     args = p.parse_args()
+
+    if args.selftest:
+        args.mock = True
+        args.task = args.task or "写函数 is_prime(n): 判断 n 是否为素数"
+    elif not args.task:
+        p.error("--task 为必填(或使用 --selftest 自测)")
 
     llm = _build_mock_fn() if args.mock else _build_openai_fn(args.model)
     history, memory = reflexion(args.task, llm, args.trials, DEFAULT_TESTS)

@@ -155,12 +155,19 @@ def solve_task(task: str, llm: LLMFn, lib: SkillLibrary) -> Run:
 
 def main() -> None:
     p = argparse.ArgumentParser(description="Voyager 技能库简化原型")
-    g = p.add_mutually_exclusive_group(required=True)
+    g = p.add_mutually_exclusive_group(required=False)
     g.add_argument("--task", help="单个任务")
     g.add_argument("--tasks", nargs="+", help="多个任务(顺序执行,共享技能库)")
     p.add_argument("--model", default="gpt-4o-mini")
     p.add_argument("--mock", action="store_true")
+    p.add_argument("--selftest", action="store_true", help="内置示例自测(强制 mock)")
     args = p.parse_args()
+
+    if args.selftest:
+        args.mock = True
+        args.tasks = args.tasks or ["写一首关于春天的短诗", "创作一首春天的诗", "写一首秋天的诗"]
+    elif not args.task and not args.tasks:
+        p.error("需提供 --task 或 --tasks(或使用 --selftest 自测)")
 
     llm = _build_mock_fn() if args.mock else _build_openai_fn(args.model)
     tasks = args.tasks if args.tasks else [args.task]

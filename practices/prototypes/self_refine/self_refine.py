@@ -147,11 +147,19 @@ def _looks_satisfied(fb: str) -> bool:
 
 def main() -> None:
     p = argparse.ArgumentParser(description="Self-Refine 最小可运行原型")
-    p.add_argument("--task", required=True, help="要完成的任务/问题")
+    p.add_argument("--task", help="要完成的任务/问题(--selftest 时可省)")
     p.add_argument("--iters", type=int, default=3, help="最多迭代次数(默认 3)")
     p.add_argument("--model", default="gpt-4o-mini", help="模型名(OpenAI 兼容)")
     p.add_argument("--mock", action="store_true", help="离线 mock 模式,无需 API")
+    p.add_argument("--selftest", action="store_true", help="内置示例自测(强制 mock,供 CI/脚本调用)")
     args = p.parse_args()
+
+    if args.selftest:
+        args.mock = True
+        args.task = args.task or "给一个关于回收利用的简短公益标语"
+        args.iters = args.iters or 1
+    elif not args.task:
+        p.error("--task 为必填(或使用 --selftest 自测)")
 
     llm = _build_mock_fn() if args.mock else _build_openai_fn(args.model)
 
