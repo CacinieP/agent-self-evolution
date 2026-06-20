@@ -74,11 +74,18 @@ agent-self-evolution/
 
 ---
 
-## 📄 License
+## 📄 License(双协议 / Dual License)
 
-本仓库的**代码**采用 [MIT License](LICENSE)。
+本仓库按内容类型采用**双协议**:
 
-论文 PDF 等第三方材料的版权归原作者所有,本仓库仅用于学习研究目的。
+| 内容 | 协议 | 文件 |
+|---|---|---|
+| **代码**(`*.py/js/ts/sh`、脚本、配置) | **MIT License** | [`LICENSE-CODE`](LICENSE-CODE) |
+| **文档**(`*.md`、笔记、综述、README、图表) | **CC BY 4.0** | [`LICENSE-DOC`](LICENSE-DOC) |
+
+总览见 [`LICENSE`](LICENSE)。
+
+> 论文 PDF 等第三方材料的版权归原作者所有,本仓库仅用于学习研究目的。
 
 ---
 
