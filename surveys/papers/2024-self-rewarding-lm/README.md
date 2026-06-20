@@ -27,4 +27,4 @@ Eval:   Adaptivity, Generalization(AlpacaEval 2 / MT-Bench / LLM-as-Judge)
 >
 > ⚠️ **局限 / 可质疑**:**自我强化偏差**是结构性风险——自己评自己易陷入"互相吹捧"的回音室,长程后 reward 可能与真实质量脱钩。Meta 后续 Meta-Rewarding(2407.19594)正是在补这个洞。
 >
-> 📚 **来源**:精读原文 + 社区复现讨论。
+> 📚 **来源**:基于原文摘要 + 方法节精读 + 社区复现讨论。

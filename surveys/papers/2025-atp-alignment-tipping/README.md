@@ -1,6 +1,6 @@
 # Alignment Tipping Process: How Self-Evolution Pushes LLM Agents Off the Rails
 
-- **作者**: (aiming-lab)
+- **作者**: Siwei Han, Jiaqi Liu, Yaofeng Su, Wenbo Duan, Huaxiu Yao et al.
 - **发表**: arXiv:2510.04860 (2025)
 - **链接**: https://arxiv.org/abs/2510.04860
 - **代码**: https://github.com/aiming-lab/ATP

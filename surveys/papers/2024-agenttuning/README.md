@@ -1,7 +1,7 @@
 # AgentTuning: Enabling Generalized Agent Abilities for LLMs
 
 - **作者**: Aohan Zeng, Mingdao Liu, Zehui Chen, et al. (Tsinghua / 智谱)
-- **发表**: arXiv:2310.12823
+- **发表**: ACL 2024 Findings / arXiv:2310.12823
 - **链接**: https://arxiv.org/abs/2310.12823
 - **代码**: https://github.com/THUDM/AgentTuning
 

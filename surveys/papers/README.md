@@ -108,14 +108,13 @@
 ## 🗺 收录分布速览
 
 ```
-支柱:    Model     ████████████████████ 14
-         Context   ████████████████████████ 15  (Prompt 5 + 记忆 7 + Voyager)
-         Tool      █████ 4                   (Voyager, CREATOR, SkillWeaver, ToolGen)
-         Arch      ██████████ 7              (ADAS/AFlow/DGM/Mobile-E/WebEvolver/GPTSwarm/AgentSquare)
-         Safety    ██ 2                      (ATP, ST-WebAgentBench)
-         域专属     9(医疗/金融/教育/GUI/Web,多与他类交叉)
-类型:    方法 41 · 综述 2 · 基准 6  (部分跨类)
-年份:    2022 ×2 · 2023 ×11 · 2024 ×20 · 2025 ×15
+各表唯一论文数(跨类重复计入多表,去重后共 48):
+  Model 14 · Context 12 · Tool 4 · Arch 7 · Safety 2 · 域专属 9 · 综述 2 · 基准 6
+注:Voyager 同时在 Context/Tool;Mobile-E/WebEvolver/DigiRL/Agent Q/WebRL/SkillWeaver/ST-WebAgentBench
+    等跨"支柱×域"或"支柱×基准",故各表相加 > 48。
+
+类型:  方法类 40 · 综述 2 · 基准 6
+年份:  2022 ×1 · 2023 ×10 · 2024 ×23 · 2025 ×14
 ```
 
 ## ✅ 覆盖体检(对照 TAXONOMY 声明的代表工作)
