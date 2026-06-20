@@ -5,7 +5,7 @@
 > A public repository for collecting and organizing **research and practice** on Agent Self-Evolution.
 
 [![License: MIT + CC BY 4.0](https://img.shields.io/badge/License-MIT%20code%20%2B%20CC%20BY%204.0%20docs-blue)](./LICENSE)
-[![Papers](https://img.shields.io/badge/Papers-43-9cf)](./surveys/papers)
+[![Papers](https://img.shields.io/badge/Papers-48-9cf)](./surveys/papers)
 [![Prototypes](https://img.shields.io/badge/Prototypes-1-green)](./practices/prototypes)
 [![Last Commit](https://img.shields.io/github/last-commit/CacinieP/agent-self-evolution)](https://github.com/CacinieP/agent-self-evolution/commits/main)
 [![Stars](https://img.shields.io/github/stars/CacinieP/agent-self-evolution?style=social)](https://github.com/CacinieP/agent-self-evolution/stargazers)

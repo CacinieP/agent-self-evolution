@@ -3,7 +3,7 @@
 > 按本仓库 [TAXONOMY](../../docs/TAXONOMY.md) 的 **What to Evolve** 四大支柱归类。
 > 命名规范:`<year>-<keyword>`。每篇一个目录,内含 `README.md`(元信息 + 维度速查)。
 
-收录数:**43**(种子 15 + batch2 8 + batch3 12 + batch4 8,持续扩充)
+收录数:**48**(种子 15 + batch2 8 + batch3 12 + batch4 8 + batch5 5,持续扩充)
 
 ---
 
@@ -24,6 +24,7 @@
 | [Math-Shepherd](./2023-math-shepherd) | 2023 | 无需人工标注,自动构造逐步 PRM | Model/Reward · RL · Process |
 | [Agent Q](./2024-agent-q) | 2024 | MCTS + 自我批判 + RL,真实网页任务 | Model · RL · MCTS |
 | [WebRL](./2024-webrl) | 2024 | 自进化在线课程 RL 训 Web Agent | Model · RL · 自进化课程 |
+| [Memory-R1](./2025-memory-r1) | 2025 | 用 RL 训练 Agent 主动管理外部记忆 | Model+Memory · RL · 记忆管理 |
 
 ## 📝 What: Context(上下文:记忆 + Prompt)
 
@@ -49,6 +50,7 @@
 | [Voyager](./2023-voyager) | 2023 | 写代码技能并存进技能库(交叉见 Context) | Tool(Create/Master) |
 | [CREATOR](./2023-creator) | 2023 | LLM 自己造工具:抽象设计 + 代码实现 | Tool(Create) |
 | [SkillWeaver](./2025-skillweaver) | 2025 | 自主合成 API 技能 + 练习打磨,技能库成长 | Tool(Create + Master) |
+| [ToolGen](./2024-toolgen) | 2024 | 工具内化为唯一 token,检索与调用统一为生成 | Tool(Select) + Model |
 
 ## 🏗 What: Architecture(单 / 多 Agent 系统级进化)
 
@@ -67,12 +69,15 @@
 | 论文 | 年份 | 一句话 | 维度速查 |
 |---|---|---|---|
 | [Alignment Tipping Process (ATP)](./2025-atp-alignment-tipping) | 2025 | 持续自进化侵蚀对齐,Agent 滑向不对齐 | Safety · 部署期 · 对齐漂移 |
+| [ST-WebAgentBench](./2024-st-webagentbench) | 2024 | Web Agent 安全可信评测:375 任务 + 3057 策略 | Safety · Web · Benchmark |
 
 ## 🏥 What: Specialized Domain(专属域自进化)
 
 | 论文 | 年份 | 域 | 一句话 |
 |---|---|---|---|
 | [Agent Hospital](./2024-agent-hospital) | 2024 | Medical | 虚拟医院,医生 Agent 从诊疗经验中自主进化 |
+| [QuantAgent](./2024-quantagent-strategy) | 2024 | Finance | 多 Agent 自动发现量化交易策略 |
+| [EduPlanner](./2025-eduplanner) | 2025 | Education | 多 Agent 对抗迭代优化教学设计 |
 | [Mobile-Agent-E](./2025-mobile-agent-e) | 2025 | GUI/Mobile | (交叉见 Arch) |
 | [DigiRL](./2024-digirl) | 2024 | GUI/Device | (交叉见 Model) |
 | [WebEvolver](./2025-webevolver) | 2025 | Web | (交叉见 Arch) |
@@ -96,34 +101,35 @@
 | [GAIA](./2023-gaia) | 2023 | General | 真实世界多步任务 |
 | [LifelongAgentBench](./2025-lifelongagentbench) | 2025 | General | 终身学习 / 抗遗忘 |
 | [Agent-SafetyBench](./2024-agent-safetybench) | 2024 | General/Safety | ~349 环境的安全评测 |
+| [ST-WebAgentBench](./2024-st-webagentbench) | 2024 | Web/Safety | 375 任务 + 3057 策略的可信评测 |
 
 ---
 
 ## 🗺 收录分布速览
 
 ```
-支柱:    Model     ██████████████████ 13
-         Context   ███████████████████████ 14  (Prompt 5 + 记忆 6 + Voyager)
-         Tool      ████ 3                  (Voyager, CREATOR, SkillWeaver)
-         Arch      ██████████ 7            (ADAS/AFlow/DGM/Mobile-E/WebEvolver/GPTSwarm/AgentSquare)
-         Safety    █ 1                     (ATP)
-         域专属     7(医疗/GUI/Web,多与他类交叉)
-类型:    方法 37 · 综述 2 · 基准 5  (部分跨类)
-年份:    2022 ×2 · 2023 ×11 · 2024 ×17 · 2025 ×13
+支柱:    Model     ████████████████████ 14
+         Context   ████████████████████████ 15  (Prompt 5 + 记忆 7 + Voyager)
+         Tool      █████ 4                   (Voyager, CREATOR, SkillWeaver, ToolGen)
+         Arch      ██████████ 7              (ADAS/AFlow/DGM/Mobile-E/WebEvolver/GPTSwarm/AgentSquare)
+         Safety    ██ 2                      (ATP, ST-WebAgentBench)
+         域专属     9(医疗/金融/教育/GUI/Web,多与他类交叉)
+类型:    方法 41 · 综述 2 · 基准 6  (部分跨类)
+年份:    2022 ×2 · 2023 ×11 · 2024 ×20 · 2025 ×15
 ```
 
 ## ✅ 覆盖体检(对照 TAXONOMY 声明的代表工作)
 
 - Prompt 优化:APE/PromptBreeder/SPO/PromptAgent/DSPy ✅
-- 工具:Voyager/CREATOR/SkillWeaver ✅(ToolGen 待补)
-- 多 Agent 架构:GPTSwarm/ADAS/AgentSquare ✅(AutoFlow/MaAS 待补)
-- RL 训练:SCoRe/Math-Shepherd/Agent Q/WebRL/TextGrad/DigiRL/RAGEN/AgentTuning ✅(较完整)
-- 安全:ATP/Agent-SafetyBench ✅(ST-WebAgentBench 待补)
-- 记忆:Mem0/AWM/ExpeL/A-MEM/Reflexion ✅(Memory-R1/ReasoningBank 待补)
+- 工具:Voyager/CREATOR/SkillWeaver/ToolGen ✅
+- 多 Agent 架构:GPTSwarm/ADAS/AgentSquare/EduPlanner/QuantAgent ✅(MaAS 待补)
+- RL 训练:SCoRe/Math-Shepherd/Agent Q/WebRL/TextGrad/DigiRL/RAGEN/AgentTuning/Memory-R1 ✅(较完整)
+- 安全:ATP/Agent-SafetyBench/ST-WebAgentBench ✅
+- 记忆:Mem0/AWM/ExpeL/A-MEM/Reflexion/Memory-R1 ✅(ReasoningBank 待补)
 - 终身学习评测:LifelongAgentBench ✅
-- 域:医疗/GUI/Web ✅(金融/教育待补)
+- 域:医疗/金融/教育/GUI/Web ✅(全覆盖)
 
-> 至此,TAXONOMY 四维 + 43 篇代表工作 + 覆盖体检齐全,可作为该方向的**可用索引站**。剩余待补为长尾。
+> 至此,TAXONOMY 四维 + 48 篇代表工作 + 覆盖体检齐全,五大支柱与五大专属域(医疗/金融/教育/GUI/Web)均有覆盖,可作为该方向的**可用索引站**。剩余待补为个别长尾方法。
 
 ## ➕ 如何补充
 
