@@ -3,7 +3,7 @@
 - **作者**: Yongchao Zhou, Andrei Ioan Muresanu, Ziwen Han, Keiran Paster, Silviu Pitis, Harris Chan, Jimmy Ba (UofT)
 - **发表**: ICLR 2023 / arXiv:2211.01910
 - **链接**: https://arxiv.org/abs/2211.01910
-- **代码**: https://github.com/keirp/open_fewshot
+- **代码**: https://github.com/keirp/automatic_prompt_engineer
 
 ## 一句话总结
 把指令生成当成"自然语言程序合成":用 LLM 从输入-输出示例生成候选指令,再按表现筛选出最佳 prompt。

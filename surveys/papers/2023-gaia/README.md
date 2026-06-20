@@ -3,7 +3,7 @@
 - **作者**: Grégoire Mialon et al. (Meta 等)
 - **发表**: arXiv:2311.12983 (2023)
 - **链接**: https://arxiv.org/abs/2311.12983
-- **代码**: https://github.com/facebookresearch/gaia
+- **数据集**: https://huggingface.co/datasets/gaia-benchmark/GAIA
 
 ## 一句话总结
 面向通用 AI 助手的真实世界基准:设计"对人简单、对 AI 难"的问题,需推理、多模态、网页浏览、工具使用的多步组合。
