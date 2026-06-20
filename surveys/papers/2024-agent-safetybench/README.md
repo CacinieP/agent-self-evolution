@@ -23,4 +23,8 @@ Where:  General
 Eval:   Safety(Safety Score, Harm Score, Risk Ratio, Refusal Rate)
 ```
 
-> 个人点评 / 启发 待补充。
+> 💡 **点评 / 启发**:349 个交互环境覆盖两大安全维度,是 Agent 安全评测的扎实基线。把"安全"从抽象口号变成可量化的多环境施压,本身就有价值。
+>
+> ⚠️ **局限 / 可质疑**:仍是 episodic 评测,测不出"持续自进化后的安全退化"(那正是 ATP 揭示的真风险)。与自进化的结合评测是空白。
+>
+> 📚 **来源**:基于摘要 + THU-CoAI repo(未精读全文)。

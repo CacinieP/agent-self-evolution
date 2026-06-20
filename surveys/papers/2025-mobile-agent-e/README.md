@@ -23,4 +23,8 @@ Where:  Specialized(GUI / Mobile)
 Eval:   Adaptivity, Retention
 ```
 
-> 个人点评 / 启发 待补充。
+> 💡 **点评 / 启发**:分层多 Agent(Manager/Decision/Actuator/Reflector/Notetaker)+ 长期记忆,把"复杂长程任务"拆解为角色分工 + 经验沉淀,是 GUI 域自进化的成熟工程方案。
+>
+> ⚠️ **局限 / 可质疑**:多 Agent 协作的通信开销大;角色划分是人工预设的,未必最优。移动 GUI 的碎片化(Android 版本/厂商定制)限制泛化。
+>
+> 📚 **来源**:基于摘要 + NeurIPS 2025 转述(未精读全文)。

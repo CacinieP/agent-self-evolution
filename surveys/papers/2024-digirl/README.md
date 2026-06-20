@@ -24,4 +24,8 @@ Where:  Specialized(GUI / Device Control)
 Eval:   Adaptivity, Generalization(真实安卓)
 ```
 
-> 个人点评 / 启发 待补充。
+> 💡 **点评 / 启发**:首批在"真实在野"安卓环境做自主 RL 的工作。offline→online 两阶段是务实设计:先离线学到能起步,再在线持续进化。证明了 GUI 域 RL 训练的可行性。
+>
+> ⚠️ **局限 / 可质疑**:真实设备执行慢且不可逆,数据采集成本高;奖励来自任务完成,稀疏。泛化到未见 App 存疑。
+>
+> 📚 **来源**:基于摘要 + NeurIPS 2024 转述(未精读全文)。
