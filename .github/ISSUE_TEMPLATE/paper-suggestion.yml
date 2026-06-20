@@ -1,0 +1,45 @@
+name: 📄 推荐论文 / Paper Suggestion
+description: 推荐一篇与 Agent 自进化相关的论文收录
+labels: ["paper-suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢推荐!请尽量填全以下信息,便于我们归档到 `surveys/papers/`。
+  - type: input
+    id: title
+    attributes:
+      label: 论文标题
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: 链接(arXiv / 会议 / 项目页)
+    validations:
+      required: true
+  - type: dropdown
+    id: pillar
+    attributes:
+      label: 主要支柱(TAXONOMY What)
+      options:
+        - Model(模型 / 参数级进化)
+        - Context(记忆 / Prompt)
+        - Tool(工具创造 / 掌握 / 选择)
+        - Architecture(单 / 多 Agent 系统级)
+        - Safety(安全 / 对齐)
+        - Specialized Domain(专属域)
+        - Survey(综述)
+        - Benchmark(评测基准)
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: 一句话总结 & 为什么值得收录
+    validations:
+      required: true
+  - type: input
+    id: code
+    attributes:
+      label: 代码仓库(可选)

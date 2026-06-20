@@ -1,0 +1,11 @@
+name: 💬 讨论 / Discussion
+description: 提出问题、想法或对分类体系的建议
+labels: ["discussion"]
+body:
+  - type: textarea
+    id: content
+    attributes:
+      label: 你的想法 / 问题
+      description: 自由描述。若是 TAXONOMY 相关,请注明涉及哪个维度。
+    validations:
+      required: true
