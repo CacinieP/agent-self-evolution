@@ -35,11 +35,15 @@ def _build_openai_fn(model: str) -> LLMFn:
     """构造一个 OpenAI 兼容的 LLM 调用函数。"""
     try:
         from openai import OpenAI  # 延迟导入,避免 mock 模式强制依赖
-    except ImportError as e:  # pragma: no cover
+    except ImportError:  # pragma: no cover
         sys.exit("缺少依赖:请 `pip install openai`,或用 --mock 模式自测。")
 
+    api_key = os.environ.get("OPENAI_API_KEY")
+    if not api_key:  # pragma: no cover
+        sys.exit("缺少 OPENAI_API_KEY:请设置环境变量,或用 --mock 模式自测。")
+
     client = OpenAI(
-        api_key=os.environ.get("OPENAI_API_KEY"),
+        api_key=api_key,
         base_url=os.environ.get("OPENAI_BASE_URL"),  # 可指向任意兼容端点
     )
 
@@ -49,7 +53,10 @@ def _build_openai_fn(model: str) -> LLMFn:
             messages=[{"role": "user", "content": prompt}],
             temperature=0.7,
         )
-        return resp.choices[0].message.content.strip()
+        if not resp.choices:  # pragma: no cover(被安全过滤/限流时)
+            sys.exit("API 返回空响应(可能被安全过滤或限流),请重试或换模型。")
+        content = resp.choices[0].message.content
+        return (content or "").strip()
 
     return _fn
 

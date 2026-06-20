@@ -41,13 +41,18 @@ def _build_openai_fn(model: str) -> LLMFn:
         from openai import OpenAI
     except ImportError:  # pragma: no cover
         sys.exit("缺少依赖:请 `pip install openai`,或用 --mock 模式。")
-    client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"), base_url=os.environ.get("OPENAI_BASE_URL"))
+    api_key = os.environ.get("OPENAI_API_KEY")
+    if not api_key:  # pragma: no cover
+        sys.exit("缺少 OPENAI_API_KEY:请设置环境变量,或用 --mock 模式。")
+    client = OpenAI(api_key=api_key, base_url=os.environ.get("OPENAI_BASE_URL"))
 
     def _fn(prompt: str) -> str:
         r = client.chat.completions.create(
             model=model, messages=[{"role": "user", "content": prompt}], temperature=0.5
         )
-        return r.choices[0].message.content.strip()
+        if not r.choices:  # pragma: no cover
+            sys.exit("API 返回空响应(可能被安全过滤或限流),请重试或换模型。")
+        return (r.choices[0].message.content or "").strip()
 
     return _fn
 

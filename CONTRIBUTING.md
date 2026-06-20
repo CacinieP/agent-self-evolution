@@ -43,8 +43,8 @@ surveys/papers/
 - **作者**:Author A, Author B
 - **机构**:Institution
 - **发表**:NeurIPS 2024 / arXiv 2024
-- **链接**:https://arxiv.org/abs/xxxx.xxxxx
-- **代码**:https://github.com/xxx/xxx
+- **链接**:arXiv `<id>` 或会议/项目页 URL
+- **代码**:GitHub 仓库 URL(若有)
 
 ## 一句话总结
 ...
