@@ -51,16 +51,15 @@ agent-self-evolution/
 
 ## 📌 Topics Covered
 
-| 维度 | 关键词 |
-|---|---|
-| 自我反思与改进 | Self-Refine, Self-Critique, Reflexion |
-| 自我对弈 / 自生成数据 | Self-Play, Self-Instruct, SPIN |
-| 技能记忆 | Skill Library, Voyager, ExpeL |
-| Agent 训练循环 | RLHF, RLAIF, Agent Trajectory Learning |
-| 自进化系统 | SE Agent, Self-Improving Agent, ADAS |
-| 评测 | AgentBench, SWE-bench, GAIA |
+完整分类体系见 [`docs/TAXONOMY.md`](docs/TAXONOMY.md)(对齐 2025 综述 [arXiv:2507.21046](https://arxiv.org/abs/2507.21046))。速览:
 
-(完整分类见 [`docs/TAXONOMY.md`](docs/TAXONOMY.md))
+**What to Evolve(进化什么)**
+- 🧠 模型(Model):Self-Rewarding LM, SCA, TextGrad, RAGEN
+- 📝 上下文(Context):Memory(Mem0, Agent Workflow Memory) · Prompt 优化(DSPy, PromptBreeder, SPO)
+- 🔧 工具(Tool):Voyager, SkillWeaver, ToolGen
+- 🏗 架构(Arch):ADAS, GPTSwarm, Darwin Gödel Machine, AFlow
+
+**When / How / Where to Evolve** — 详见 TAXONOMY 第 2–4 节
 
 ---
 
