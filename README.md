@@ -4,7 +4,23 @@
 >
 > A public repository for collecting and organizing **research and practice** on Agent Self-Evolution.
 
+[![License: MIT + CC BY 4.0](https://img.shields.io/badge/License-MIT%20code%20%2B%20CC%20BY%204.0%20docs-blue)](./LICENSE)
+[![Papers](https://img.shields.io/badge/Papers-43-9cf)](./surveys/papers)
+[![Prototypes](https://img.shields.io/badge/Prototypes-1-green)](./practices/prototypes)
+[![Last Commit](https://img.shields.io/github/last-commit/CacinieP/agent-self-evolution)](https://github.com/CacinieP/agent-self-evolution/commits/main)
+[![Stars](https://img.shields.io/github/stars/CacinieP/agent-self-evolution?style=social)](https://github.com/CacinieP/agent-self-evolution/stargazers)
+
 本仓库致力于系统性地归档与"Agent 自进化(Self-Evolution)"相关的论文、综述、文章、实验、原型与代码片段,方便研究者与工程师追踪该方向的最新进展,并复现/扩展其中的方法。
+
+## 🧭 快速导航
+
+| 我想要… | 去这里 |
+|---|---|
+| 看领域全貌 / 分类体系 | 🧭 [`docs/TAXONOMY.md`](docs/TAXONOMY.md)(对齐 2025 综述 What/When/How/Where) |
+| 按支柱找论文 | 📚 [`surveys/papers/`](surveys/papers/README.md)(43 篇 + 覆盖体检表) |
+| 跑一个自进化原型 | 🧪 [`practices/prototypes/`](practices/prototypes)(Self-Refine 可运行 demo) |
+| 了解仓库怎么用 | 📖 [`docs/REPO_GUIDE.md`](docs/REPO_GUIDE.md) |
+| 贡献一篇论文 / 一个想法 | 🤝 [`CONTRIBUTING.md`](CONTRIBUTING.md) · [发起讨论](https://github.com/CacinieP/agent-self-evolution/discussions) |
 
 ---
 
