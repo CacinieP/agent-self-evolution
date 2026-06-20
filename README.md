@@ -17,8 +17,9 @@
 | 我想要… | 去这里 |
 |---|---|
 | 看领域全貌 / 分类体系 | 🧭 [`docs/TAXONOMY.md`](docs/TAXONOMY.md)(对齐 2025 综述 What/When/How/Where) |
-| 按支柱找论文 | 📚 [`surveys/papers/`](surveys/papers/README.md)(43 篇 + 覆盖体检表) |
-| 跑一个自进化原型 | 🧪 [`practices/prototypes/`](practices/prototypes)(Self-Refine 可运行 demo) |
+| 读一篇**带观点**的综述 | 📝 [`docs/SURVEY.md`](docs/SURVEY.md)(基于 48 篇,含判断与路线图) |
+| 按支柱找论文 | 📚 [`surveys/papers/`](surveys/papers/README.md)(48 篇 + 覆盖体检表) |
+| 跑一个自进化原型 | 🧪 [`practices/prototypes/`](practices/prototypes)(Self-Refine / Reflexion / Voyager / A-MEM,均可运行) |
 | 了解仓库怎么用 | 📖 [`docs/REPO_GUIDE.md`](docs/REPO_GUIDE.md) |
 | 贡献一篇论文 / 一个想法 | 🤝 [`CONTRIBUTING.md`](CONTRIBUTING.md) · [发起讨论](https://github.com/CacinieP/agent-self-evolution/discussions) |
 
