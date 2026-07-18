@@ -1,24 +1,24 @@
-# ScoreFlow: Multi-Agent Workflow Optimization via Scoring
+# ScoreFlow: Mastering LLM Agentic Workflows via Actor-Critic
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2410.00000 (2024)
-- **链接**: https://arxiv.org/abs/2410.00000
+- **作者**: Wang et al. (2025)
+- **发表**: arXiv:2502.04306 (2025)
+- **链接**: https://arxiv.org/abs/2502.04306
 - **代码**: —
 
 ## 一句话总结
-用评分机制自动优化多 Agent 工作流,在任务执行中迭代改进 Agent 协作策略。
+用 Actor-Critic 框架优化多步骤 Agent 工作流。
 
 ## 核心方法
-构建工作流评分器,评估每个 Agent 子步骤的贡献,自动淘汰低效步骤并强化有效模式。
+构建工作流级别的 Actor-Critic,评估每个子步骤的贡献,优化整体执行策略。
 
 ## 关键贡献
-评分驱动的自动化工作流优化在复杂任务链上显著减少冗余步骤。
+工作流级 RL 减少冗余步骤提升成功率。
 
 ## 维度速查 (TAXONOMY)
 ```
 What:   Architecture(Multi-Agent)
-When:   Inter-test-time × ICL
-How:    Reward-based · Online · On-policy · Hybrid
+When:   Inter-test-time × RL
+How:    Reward-based(Actor-Critic) · Online · On-policy · Hybrid
 Where:  General
 Eval:   Efficiency, Generalization
 ```
