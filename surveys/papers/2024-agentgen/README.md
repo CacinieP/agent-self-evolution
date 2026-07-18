@@ -1,18 +1,18 @@
-# AgentGen: Enhancing Agent Capabilities by Generating Diverse, Interactive, and Challenging Environments
+# AgentGen: Enhancing Planning Abilities for LLM-based Agent via Environment and Task Generation
 
-- **作者**: Jian Hu, Chenghao Xu, Zhuoran Yang, Tong Zhang, Zhaoran Wang
-- **发表**: arXiv:2408.10159 (2024)
-- **链接**: https://arxiv.org/abs/2408.10159
+- **作者**: Mengkang Hu, Pu Zhao, Can Xu, Qingfeng Sun, Jianguang Lou, Qingwei Lin, Ping Luo, Saravan Rajmohan
+- **发表**: KDD 2025 / arXiv:2408.00764
+- **链接**: https://arxiv.org/abs/2408.00764
 - **代码**: —
 
 ## 一句话总结
-Agent 自主生成多样化交互式训练环境,在生成的子任务上自我训练提升泛化能力。
+用 LLM 自动生成多样化的环境和规划任务,通过指令微调提升 Agent 规划能力。
 
 ## 核心方法
-利用 LLM 根据已有任务模板生成新的交互式环境,通过任务模板库不断扩充训练分布,在生成环境中自对弈训练。
+用灵感库保证环境多样性 + 双向演化方法(Bi-Evol)自适应任务难度,构建 Agent 训练数据。
 
 ## 关键贡献
-提出"环境生成"作为 Agent 自进化的新维度,证明自生成环境可提升 Agent 在未见任务上的零样本泛化。
+自生成训练数据使 Llama-3.1-8B 超越 GPT-3.5,70B 达 SOTA,验证"环境生成"作为 Agent 自进化新维度。
 
 ## 维度速查 (TAXONOMY)
 ```
