@@ -1,18 +1,18 @@
-# EvoPatient: Evolving Patient Profiles for Medical Agent Training
+# EvoPatient: LLMs Can Simulate Standardized Patients via Agent Coevolution
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2407.00000 (2024)
-- **链接**: https://arxiv.org/abs/2407.00000
+- **作者**: Du et al. (2024)
+- **发表**: arXiv:2412.11716 (2024)
+- **链接**: https://arxiv.org/abs/2412.11716
 - **代码**: —
 
 ## 一句话总结
-通过动态演化患者档案丰富医疗 Agent 训练,提升诊断泛化性。
+LLM Agent 通过协同进化模拟标准化患者,丰富医疗 Agent 训练数据。
 
 ## 核心方法
-生成多样化演化患者档案,Agent 在这些档案上训练后可泛化到 unseen 病例。
+患者 Agent 和医生 Agent 通过交互协同进化,生成多样化的诊疗场景。
 
 ## 关键贡献
-患者档案的动态演化是医疗 Agent 自进化的关键,显著提升跨病例泛化。
+Agent 协同进化生成的高质量训练数据显著提升医疗 Agent 的诊断泛化性。
 
 ## 维度速查 (TAXONOMY)
 ```
