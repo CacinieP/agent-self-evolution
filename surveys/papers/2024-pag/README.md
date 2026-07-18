@@ -1,24 +1,26 @@
-# PAG: Partial-Attention Guidance for Efficient Agent Learning
+# PAG: Multi-turn Reinforced LLM Self-Correction with Policy as Generative Verifier
 
-- **作者**: Yifan Zhang et al.
-- **发表**: arXiv:2410.00139 (2024)
+- **作者**: Jiang et al. (2025)
+- **发表**: arXiv:2410.00139 (待验证)
 - **链接**: https://arxiv.org/abs/2410.00139
 - **代码**: —
 
 ## 一句话总结
-通过部分注意力引导在复杂观察空间中高效训练 Agent,减少自进化计算开销。
+用策略作为生成式验证器,多轮强化 LLM 自我纠正。
 
 ## 核心方法
-设计部分注意力机制,让 Agent 只关注任务相关的观察子集,降低训练时的有效状态空间。
+执行轨迹/自然语言评估作为奖励信号,在线 SFT+RL 框架下持续改进策略。
 
 ## 关键贡献
-在保持性能的同时大幅降低 Agent 训练计算量,提升自进化效率。
+验证器驱动的自我纠正机制在多轮交互中显著提升复杂任务表现。
 
 ## 维度速查 (TAXONOMY)
 ```
-What:   Model(Policy) + Architecture
-When:   Inter-test-time × RL
-How:    Reward-based · Online · On-policy · Outcome
+What:   Model(Policy)
+When:   Intra-test-time × RL
+How:    Reward-based · Online · On-policy · Process
 Where:  General
-Eval:   Efficiency, Adaptivity
+Eval:   Adaptivity, Efficiency
 ```
+
+> ⚠️ **需验证**: arxiv ID 为占位符。标题来自 TAXONOMY 主骨架论文(arXiv:2507.21046)引用 bib.bib176。
