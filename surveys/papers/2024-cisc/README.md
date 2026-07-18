@@ -1,24 +1,24 @@
-# CISC: Curriculum-induced Self-consistent Reasoning for LLM Training
+# CISC: Confidence Improves Self-Consistency in LLMs
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2409.00000 (2024)
-- **链接**: https://arxiv.org/abs/2409.00000
+- **作者**: Taubenfeld et al. (2025)
+- **发表**: arXiv:2502.06233 (2025)
+- **链接**: https://arxiv.org/abs/2502.06233
 - **代码**: —
 
 ## 一句话总结
-通过课程驱动的自一致推理逐步提升 LLM 推理能力,Agent 自主管理难度进阶。
+置信度驱动的自一致推理,提升 LLM 推理的可靠性和一致性。
 
 ## 核心方法
-设计课程调度器,根据 Agent 当前能力自适应调整任务难度,在逐步增强的难度中训练推理一致性。
+在自一致采样中加入置信度评估,筛选高置信推理路径提高最终答案准确率。
 
 ## 关键贡献
-自适应的课程学习减少 Agent 自我训练中的分布偏移,在长链路推理上验证效果。
+置信度引导的自一致方法在数学推理上显著优于朴素自一致。
 
 ## 维度速查 (TAXONOMY)
 ```
 What:   Model(Policy)
-When:   Inter-test-time × SFT
-How:    Reward-based · Offline+Online · Mixed · Hybrid
+When:   Intra-test-time × ICL
+How:    Reward-based(置信度) · Online · On-policy · Process
 Where:  General(推理)
-Eval:   Generalization, Efficiency
+Eval:   Adaptivity, Efficiency
 ```
