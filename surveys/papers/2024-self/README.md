@@ -1,24 +1,24 @@
-# SELF: Self-Evolution via Feedback and Learning
+# SELF: Self-Evolution with Language Feedback
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2409.00000 (2024)
-- **链接**: https://arxiv.org/abs/2409.00000
+- **作者**: Lu et al. (2023)
+- **发表**: arXiv:2310.00533 (2023)
+- **链接**: https://arxiv.org/abs/2310.00533
 - **代码**: —
 
 ## 一句话总结
-Agent 通过自反馈信号和在线学习在任务间累积改进,无需外部标注。
+Agent 通过语言反馈驱动自进化,任务间累积改进。
 
 ## 核心方法
-Agent 在任务完成后自动生成反馈信号,用于微调自身策略;通过 SFT 在轨迹间迁移经验。
+自生成语言反馈信号→SFT→任务间持续改进,无需外部标注。
 
 ## 关键贡献
-提供任务间自进化的完整流水线,在对话和任务执行上验证持续改进能力。
+语言反馈驱动的自进化流水线,验证语言作为进化信号的可行性。
 
 ## 维度速查 (TAXONOMY)
 ```
 What:   Model(Policy)
 When:   Inter-test-time × SFT
-How:    Reward-based(自反馈) · Offline · On-policy · Outcome
+How:    Reward-based(语言反馈) · Offline · On-policy · Outcome
 Where:  General
 Eval:   Retention, Generalization
 ```
