@@ -1,18 +1,18 @@
-# SPC: Self-Play Consistency for Reliable Agent Training
+# SPC: Evolving Self-Play Critic via Adversarial Games for LLM Reasoning
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2501.00000 (2025)
-- **链接**: https://arxiv.org/abs/2501.00000
+- **作者**: Chen et al. (2025)
+- **发表**: arXiv:2504.19162 (2025)
+- **链接**: https://arxiv.org/abs/2504.19162
 - **代码**: —
 
 ## 一句话总结
-通过一致性正则化约束自博弈训练,防止策略退化和奖励欺骗。
+通过对抗性博弈进化自博弈 critic,提升 LLM 推理的可靠性。
 
 ## 核心方法
-在多轮自我对弈中引入一致性约束,要求 Agent 在相似状态下保持相似行为,抑制策略抖动。
+构建自我对弈的 critic 训练框架,通过对抗性游戏迭代改进评判能力。
 
 ## 关键贡献
-解决自博弈训练的稳定性问题,在连续控制任务上验证长期训练的可靠性。
+对抗性自博弈在 LLM 推理评测上实现 critic 能力的持续进化。
 
 ## 维度速查 (TAXONOMY)
 ```
