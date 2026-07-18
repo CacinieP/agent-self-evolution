@@ -1,8 +1,8 @@
 # AutoGUI: Grounding GUI Agents in Natural Language
 
-- **作者**: Zhiwei Liu et al.
-- **发表**: arXiv:2404.02853 (2024)
-- **链接**: https://arxiv.org/abs/2404.02853
+- **作者**: Li et al. (2025)
+- **发表**: arXiv:2502.01977 (2025)
+- **链接**: https://arxiv.org/abs/2502.01977
 - **代码**: —
 
 ## 一句话总结
