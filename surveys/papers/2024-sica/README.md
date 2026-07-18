@@ -1,8 +1,8 @@
 # SICA: A Self-Improving Coding Agent
 
-- **作者**: Robeyns et al. (2025)
-- **发表**: arXiv:2412.14281 (待验证)
-- **链接**: https://arxiv.org/abs/2412.14281
+- **作者**: Maxime Robeyns, Martin Szummer, Laurence Aitchison
+- **发表**: arXiv:2504.15228 (2025)
+- **链接**: https://arxiv.org/abs/2504.15228
 - **代码**: —
 
 ## 一句话总结
@@ -22,5 +22,3 @@ How:    Reward-based(代码验证) · Online · On-policy · Outcome
 Where:  Coding
 Eval:   Adaptivity, Efficiency
 ```
-
-> ⚠️ **需验证**: arxiv ID 为占位符。标题来自 TAXONOMY 主骨架论文(arXiv:2507.21046)引用 bib.bib360。
