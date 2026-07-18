@@ -1,18 +1,18 @@
-# DRAFT: Dynamic Retrieval and Fine-Tuning for Agent Tools
+# DRAFT: From Exploration to Mastery — Enabling LLMs to Master Tools via Self-Driven Interactions
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2412.00000 (2024)
-- **链接**: https://arxiv.org/abs/2412.00000
+- **作者**: Zhang/Qu et al. (2025)
+- **发表**: arXiv:2503.02534 (2025)
+- **链接**: https://arxiv.org/abs/2503.02534
 - **代码**: —
 
 ## 一句话总结
-Agent 动态检索和微调工具描述,根据任务上下文优化工具使用策略。
+LLM 通过自我驱动的交互掌握工具使用,从探索到精通。
 
 ## 核心方法
-构建工具检索模块,Agent 根据任务描述动态获取最相关的工具描述,并在使用后根据结果微调工具理解。
+Agent 自主探索工具使用方式,通过自驱动交互积累工具使用经验并精化技能。
 
 ## 关键贡献
-动态工具理解机制在复杂工具集上提升 Agent 工具选择准确率。
+自我驱动的工具掌握在多个工具集上验证。
 
 ## 维度速查 (TAXONOMY)
 ```
