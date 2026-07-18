@@ -1,12 +1,12 @@
 # AutoFlow: Automated Workflow Generation for Large Language Model Agents
 
-- **作者**: Zelong Li, Shuyuan Xu, Kai Mei, Wenyue Hua, Balaji Rama, Om Raheja, Hao Wang, He Zhu, Yongfeng Zhang
+- **作者**: Li, Xu, Mei, Hua et al. (2024)
 - **发表**: arXiv:2407.12821 (2024)
 - **链接**: https://arxiv.org/abs/2407.12821
 - **代码**: —
 
 ## 一句话总结
-LLM Agent 的自然语言工作流自动生成与优化框架,支持微调式和 in-context 式两种生成方式。
+LLM Agent 的自然语言工作流自动生成与优化框架。
 
 ## 核心方法
 迭代优化程序自动生成/精化自然语言工作流,支持开源和闭源 LLM。
