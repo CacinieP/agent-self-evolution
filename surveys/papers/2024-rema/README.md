@@ -1,22 +1,22 @@
-# ReMA: Reasoning with Memory-Augmented Agents for Complex Task Solving
+# ReMA: Learning to Meta-think for LLMs with Multi-Agent Reinforcement Learning
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2408.00400 (2024)
-- **链接**: https://arxiv.org/abs/2408.00400
+- **作者**: Wan et al. (2025)
+- **发表**: arXiv:2503.19590 (2025)
+- **链接**: https://arxiv.org/abs/2503.19590
 - **代码**: —
 
 ## 一句话总结
-通过记忆增强推理机制,Agent 在复杂任务中自主管理推理上下文和历史线索。
+通过多 Agent RL 让 LLM 学会"元思考",自主管理推理过程。
 
 ## 核心方法
-构建分层记忆架构,Agent 在推理时根据任务复杂度自适应调整记忆检索范围和深度。
+多个 Agent 通过 RL 协作,其中元 Agent 负责管理和优化其他 Agent 的推理策略。
 
 ## 关键贡献
-记忆增强推理在长链路任务上显著优于扁平记忆管理,实现推理与记忆的协同自进化。
+元思考机制在复杂推理任务上显著提升 LLM 的表现和效率。
 
 ## 维度速查 (TAXONOMY)
 ```
-What:   Architecture(Single-agent) + Context(Memory)
+What:   Architecture(Multi-Agent) + Context(Memory)
 When:   Intra-test-time × ICL
 How:    Reward-based · Online · On-policy · Process
 Where:  General
