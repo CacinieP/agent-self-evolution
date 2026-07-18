@@ -1,6 +1,6 @@
 # Quiet-STaR: Language Models Can Teach Themselves to Think Before Speaking
 
-- **作者**: Eric Zelikman, Georges Harik, Yijia Shao, Varuna Jayasiri, Nick Haber, Noah D. Goodman
+- **作者**: Eric Zelikman, Georges Harik, Yijia Shao, Varuna Jayasiri, Nick Haber, Noah D. Goodman (Stanford)
 - **发表**: arXiv:2403.09629 (2024)
 - **链接**: https://arxiv.org/abs/2403.09629
 - **代码**: https://github.com/ezelikman/quiet-star
