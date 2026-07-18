@@ -1,18 +1,18 @@
-# Richelieu: AI-Driven Creative Writing Agent
+# Richelieu: Self-Evolving LLM-Based Agents for AI Diplomacy
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2409.00000 (2024)
-- **链接**: https://arxiv.org/abs/2409.00000
+- **作者**: Zhao et al. (2024)
+- **发表**: arXiv:2407.06813 (2024)
+- **链接**: https://arxiv.org/abs/2407.06813
 - **代码**: —
 
 ## 一句话总结
-创意写作 Agent 通过读者反馈和风格分析自主进化写作能力。
+外交 Agent 通过自博弈和记忆增强自主进化谈判策略。
 
 ## 核心方法
-Agent 根据读者评论和风格迁移反馈迭代优化写作策略,从优秀作品中提取可迁移创作技巧。
+Agent 通过自我对弈游戏积累谈判经验,将策略洞察存入记忆指导未来决策。
 
 ## 关键贡献
-AI 创作 Agent 的自我进化在文学创作场景中验证,探索非结构化生成任务的自改进边界。
+AI 外交 Agent 的自我进化在策略游戏中验证。
 
 ## 维度速查 (TAXONOMY)
 ```
