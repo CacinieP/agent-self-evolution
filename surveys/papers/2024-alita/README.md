@@ -1,24 +1,24 @@
-# Alita: An LLM-based Agent for IoT Device Control
+# Alita: Generalist Agent Enabling Scalable Agentic Reasoning
 
-- **作者**: Jinbo Wang et al.
-- **发表**: arXiv:2405.18778 (2024)
-- **链接**: https://arxiv.org/abs/2405.18778
+- **作者**: Qiu et al.
+- **发表**: arXiv:2505.20286 (2025)
+- **链接**: https://arxiv.org/abs/2505.20286
 - **代码**: —
 
 ## 一句话总结
-LLM Agent 通过自主探索和设备描述生成可用的 IoT 控制工具,实现跨设备自进化。
+通用 Agent 通过最小预定义和最大自进化实现可扩展的 Agentic 推理。
 
 ## 核心方法
-Agent 在模拟环境中自主探索 IoT 设备 API,自动生成工具描述和调用代码,构建可复用的技能库。
+Agent 在极少人工干预下自主探索和构建推理能力,通过自进化扩展工具使用和任务解决范围。
 
 ## 关键贡献
-证明 LLM Agent 可通过自我探索在 IoT 领域从零构建工具集,无需人工标注技能。
+自进化通用 Agent 在多个 benchmark 上验证。
 
 ## 维度速查 (TAXONOMY)
 ```
-What:   Tool(Discovery & Creation)
+What:   Tool(Discovery & Creation) + Model(Experience)
 When:   Inter-test-time × ICL
 How:    Reward-based(任务完成) · Online · On-policy · Outcome
-Where:  Other
-Eval:   Adaptivity
+Where:  General
+Eval:   Adaptivity, Generalization
 ```
