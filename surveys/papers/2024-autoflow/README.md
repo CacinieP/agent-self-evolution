@@ -1,24 +1,24 @@
-# AutoFlow: Automated Optimization of Multi-Agent Workflows
+# AutoFlow: Automated Workflow Generation for Large Language Model Agents
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2410.00000 (2024)
-- **链接**: https://arxiv.org/abs/2410.00000
+- **作者**: Zelong Li, Shuyuan Xu, Kai Mei, Wenyue Hua, Balaji Rama, Om Raheja, Hao Wang, He Zhu, Yongfeng Zhang
+- **发表**: arXiv:2407.12821 (2024)
+- **链接**: https://arxiv.org/abs/2407.12821
 - **代码**: —
 
 ## 一句话总结
-自动优化多 Agent 协作工作流,在搜索空间中自主发现最优执行策略。
+LLM Agent 的自然语言工作流自动生成与优化框架,支持微调式和 in-context 式两种生成方式。
 
 ## 核心方法
-将工作流优化建模为搜索问题,用强化学习搜索最优 Agent 编排和执行策略。
+迭代优化程序自动生成/精化自然语言工作流,支持开源和闭源 LLM。
 
 ## 关键贡献
-自动化工作流设计在复杂多 Agent 任务上超越手工编排。
+生成鲁棒可解释的 Agent 工作流,在多个 benchmark 上验证效果。
 
 ## 维度速查 (TAXONOMY)
 ```
 What:   Architecture(Multi-Agent)
-When:   Inter-test-time × RL
-How:    Population-based · Offline · Mixed · Outcome
+When:   Inter-test-time × ICL
+How:    Reward-based · Offline+Online · Mixed · Outcome
 Where:  General
 Eval:   Generalization, Efficiency
 ```
