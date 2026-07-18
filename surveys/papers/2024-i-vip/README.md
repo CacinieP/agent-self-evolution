@@ -1,22 +1,22 @@
-# i-VIP: Interactive Virtual Intelligent Pedagogues for Self-Evolving Education
+# i-VIP: A LLM-Driven Multi-Agent Systems for Professional Development of Mathematics Teachers
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2412.00000 (2024)
-- **链接**: https://arxiv.org/abs/2412.00000
+- **作者**: Yang et al. (2025)
+- **发表**: arXiv:2507.05292 (2025)
+- **链接**: https://arxiv.org/abs/2507.05292
 - **代码**: —
 
 ## 一句话总结
-虚拟智能导师通过与学生交互自进化教学策略,实现个性化自适应教育。
+多 Agent 系统驱动数学教师专业发展,AI 导师交互驱动教学策略自进化。
 
 ## 核心方法
-AI 导师根据学生反馈(正确率/困惑度/参与度)自动调整教学策略和内容呈现方式。
+多个 LLM Agent 协作模拟教师专业发展场景,AI 导师根据学员反馈自适应调整教学策略。
 
 ## 关键贡献
-交互驱动的教学策略自进化在多个学科上提升学习效果。
+多 Agent 驱动的教师专业发展在数学教育领域验证效果。
 
 ## 维度速查 (TAXONOMY)
 ```
-What:   Architecture(Single-agent) + Context(Prompt)
+What:   Architecture(Multi-Agent)
 When:   Inter-test-time × ICL
 How:    Reward-based(学习信号) · Online · On-policy · Process
 Where:  Education
