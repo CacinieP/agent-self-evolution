@@ -1,22 +1,22 @@
-# MAS-Zero: Multi-Agent Self-Play from Zero
+# MAS-Zero: Designing Multi-Agent Systems with Zero Supervision
 
-- **作者**: Jiaxu Chen et al.
-- **发表**: arXiv:2410.02343 (2024)
-- **链接**: https://arxiv.org/abs/2410.02343
+- **作者**: Ke et al. (2025)
+- **发表**: arXiv:2505.09996 (2025)
+- **链接**: https://arxiv.org/abs/2505.09996
 - **代码**: —
 
 ## 一句话总结
-多 Agent 从零开始通过自我博弈协同进化,无需任何人类示范。
+无需人类示范,自动设计多 Agent 协作系统。
 
 ## 核心方法
-多个 Agent 在共享环境中通过自我博弈交互,各自根据对手策略动态调整,在零人类数据下实现协同涌现。
+通过自博弈和自动架构搜索,从零开始发现最优多 Agent 协作拓扑。
 
 ## 关键贡献
-证明多 Agent 自博弈可实现从零到复杂协作策略的涌现,减少对预训练数据的依赖。
+零监督多 Agent 系统设计在复杂任务上超越手工设计的 Agent 团队。
 
 ## 维度速查 (TAXONOMY)
 ```
-What:   Architecture(Multi-Agent) + Model(Policy)
+What:   Architecture(Multi-Agent)
 When:   Inter-test-time × RL
 How:    Population-based(Self-Play) · Online · On-policy · Outcome
 Where:  General
