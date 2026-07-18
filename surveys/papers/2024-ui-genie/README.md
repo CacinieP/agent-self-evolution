@@ -1,18 +1,18 @@
-# UI-Genie: Generating User Interfaces with LLM Agents
+# UI-Genie: A Self-Improving Approach for Iteratively Boosting MLLM-based Mobile GUI Agents
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2501.00000 (2025)
-- **链接**: https://arxiv.org/abs/2501.00000
+- **作者**: Xiao et al. (2025)
+- **发表**: arXiv:2505.21496 (2025)
+- **链接**: https://arxiv.org/abs/2505.21496
 - **代码**: —
 
 ## 一句话总结
-LLM Agent 自主设计和生成用户界面,在迭代中根据用户反馈自进化 UI 设计能力。
+GUI Agent 通过迭代自改进方法持续提升移动界面操作能力。
 
 ## 核心方法
-Agent 通过对话理解需求,自主生成 UI 代码并渲染预览,根据用户反馈迭代改进设计。
+Agent 在 GUI 交互中自动收集失败案例,通过自反思和策略调整迭代改进。
 
 ## 关键贡献
-UI 设计 Agent 的自进化能力在多个平台上验证,减少对专业设计师的依赖。
+自改进 GUI Agent 在多个移动应用上验证。
 
 ## 维度速查 (TAXONOMY)
 ```
