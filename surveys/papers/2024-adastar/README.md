@@ -1,18 +1,18 @@
-# AdaSTaR: Adaptive Self-Taught Reasoner for Zero-Shot Reasoning
+# AdaSTaR: Adaptive Data Sampling for Training Self-Taught Reasoners
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2408.00000 (2024)
-- **链接**: https://arxiv.org/abs/2408.00000
+- **作者**: Woosung Koh, Wonbeen Oh, Jaein Jang, MinHyung Lee et al.
+- **发表**: NeurIPS 2025 / arXiv:2505.16322
+- **链接**: https://arxiv.org/abs/2505.16322
 - **代码**: —
 
 ## 一句话总结
-自适应选择最优推理模板,Agent 在零样本场景下自举推理能力。
+自适应采样原则平衡训练分布,动态调整难度匹配模型能力,训练 Self-Taught Reasoner。
 
 ## 核心方法
-Agent 根据问题类型自适应选择最有效的推理模板,通过自生成示范和筛选迭代改进。
+两个自适应采样原则:(1)平衡多样化的训练样本分布;(2)动态调整难度匹配模型当前能力。
 
 ## 关键贡献
-自适应模板选择机制在零样本推理上显著优于固定模板方法。
+在 6 个 benchmark 上均获最佳准确率,平均节省 58.6% 训练 FLOPs。
 
 ## 维度速查 (TAXONOMY)
 ```
@@ -20,5 +20,5 @@ What:   Model(Policy)
 When:   Inter-test-time × SFT
 How:    Imitation · Offline · On-policy · Outcome
 Where:  General(推理)
-Eval:   Generalization
+Eval:   Generalization, Efficiency
 ```
