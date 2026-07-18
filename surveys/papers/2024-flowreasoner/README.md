@@ -1,18 +1,18 @@
-# FlowReasoner: Reasoning over Multi-Agent Workflows with Self-Improvement
+# FlowReasoner: Reinforcing Query-Level Meta-Agents
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2405.00000 (2024)
-- **链接**: https://arxiv.org/abs/2405.00000
+- **作者**: Gao et al. (2025)
+- **发表**: arXiv:2504.21024 (2025)
+- **链接**: https://arxiv.org/abs/2504.21024
 - **代码**: —
 
 ## 一句话总结
-让 Agent 在推理过程中自主优化工作流,动态调整任务执行路径。
+用查询级元 Agent 动态优化工作流,根据输入自适应调整执行策略。
 
 ## 核心方法
-在推理链中嵌入工作流规划器,根据中间结果评估动态重路由执行流程,逐步优化完成策略。
+为每个查询动态激活专用元 Agent,根据查询类型选择最优子 Agent 组合。
 
 ## 关键贡献
-实现推理驱动的工作流自优化,在复杂多步任务上减少不必要步骤提升效率。
+查询级自适应元 Agent 机制在多样化任务上提升整体效率。
 
 ## 维度速查 (TAXONOMY)
 ```
