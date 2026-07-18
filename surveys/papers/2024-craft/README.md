@@ -1,24 +1,24 @@
-# CRAFT: Concept Recursive Activation for Task-grounded Fine-tuning
+# CRAFT: Customizing LLMs by Creating and Retrieving from Specialized Toolsets
 
-- **作者**: Prithviraj Sen et al.
-- **发表**: arXiv:2405.00295 (2024)
-- **链接**: https://arxiv.org/abs/2405.00295
+- **作者**: Yuan et al.
+- **发表**: ICLR 2024 / arXiv:2309.17428
+- **链接**: https://arxiv.org/abs/2309.17428
 - **代码**: —
 
 ## 一句话总结
-通过概念递归激活机制,LLM Agent 自主生成和精化工具以解决复杂任务。
+LLM 自主创建和检索专用工具集,通过工具化定制能力。
 
 ## 核心方法
-Agent 将复杂任务递归分解为可工具化的子概念,自主调用或创建对应工具执行子任务并组合结果。
+Agent 将复杂任务分解为可工具化的子任务,自动创建对应工具并存储在可检索工具集中。
 
 ## 关键贡献
-提出概念递归框架让 Agent 自主发现工具需求并精化工具,在复杂推理链上实现自给自足。
+工具创建+检索的双阶段框架,在领域特定任务上显著提升 LLM 性能。
 
 ## 维度速查 (TAXONOMY)
 ```
-What:   Tool(Iterative refinement) + Context(Prompt)
+What:   Tool(Discovery & Creation)
 When:   Intra-test-time × ICL
 How:    Reward-based · Online · On-policy · Process
 Where:  General
-Eval:   Adaptivity, Efficiency
+Eval:   Adaptivity, Generalization
 ```
