@@ -3,7 +3,7 @@
 > 按本仓库 [TAXONOMY](../../docs/TAXONOMY.md) 的 **What to Evolve** 四大支柱归类。
 > 命名规范:`<year>-<keyword>`。每篇一个目录,内含 `README.md`(元信息 + 维度速查)。
 
-收录数:**48**(种子 15 + batch2 8 + batch3 12 + batch4 8 + batch5 5,持续扩充)
+收录数:**85**(种子 15 + batch2 8 + batch3 12 + batch4 8 + batch5 5 + TAXONOMY补齐 37,持续扩充)
 
 ---
 
@@ -25,6 +25,21 @@
 | [Agent Q](./2024-agent-q) | 2024 | MCTS + 自我批判 + RL,真实网页任务 | Model · RL · MCTS |
 | [WebRL](./2024-webrl) | 2024 | 自进化在线课程 RL 训 Web Agent | Model · RL · 自进化课程 |
 | [Memory-R1](./2025-memory-r1) | 2025 | 用 RL 训练 Agent 主动管理外部记忆 | Model+Memory · RL · 记忆管理 |
+| [SCA](./2025-sca) | 2025 | 自对比学习区分好/差决策,无需人工标注 | Model · SFT · 自对比 |
+| [AgentGen](./2024-agentgen) | 2024 | Agent 自主生成训练环境,在自生成环境上自训练 | Model(Exp) · SFT · 环境生成 |
+| [PAG](./2024-pag) | 2024 | 部分注意力引导高效 Agent 训练,降低计算开销 | Model · RL · 效率优化 |
+| [SICA](./2024-sica) | 2024 | 代码辅助中自动测试+自修正,编程能力自进化 | Model+Tool · RL · 代码验证 |
+| [DYSTIL](./2025-dystil) | 2025 | 从失败轨迹提取深层洞察,跨任务自我改进 | Model(Exp)+Memory · SFT · 轨迹分析 |
+| [Quiet-STaR](./2024-quiet-star) | 2024 | LLM 自主学习在每个 token 前生成内部推理 | Model · SFT/RL · 自教推理 |
+| [LADDER](./2024-ladder) | 2025 | Test-time RL 优化推理分布 | Model · RL · TTRL |
+| [SELF](./2024-self) | 2024 | 自反馈信号驱动任务间持续改进 | Model · SFT · 自反馈 |
+| [ARIA](./2025-aria) | 2025 | 迭代式自对齐优化推理,无需外部验证 | Model · ICL · 内部一致性 |
+| [V-STaR](./2024-v-star) | 2025 | 验证器筛选高质量自示范,解决错误示范污染 | Model · SFT · 验证自举 |
+| [AdaSTaR](./2024-adastar) | 2024 | 自适应选择最优推理模板,零样本自举 | Model · SFT · 自适应模板 |
+| [RISE](./2024-rise) | 2025 | 重要性采样增强 RL 训练,避免策略退化 | Model · RL · IS校正 |
+| [CISC](./2024-cisc) | 2024 | 课程驱动自一致推理,减少分布偏移 | Model · SFT · 课程学习 |
+| [Self-Adaptive LM](./2024-self-adaptive-lm) | 2024 | 推理过程中自适应调整生成策略 | Model · SFT · 在线自适应 |
+| [TT-SI](./2024-tt-si) | 2024 | Test-time 自我反馈改进输出质量 | Model · SFT · 自评自改 |
 
 ## 📝 What: Context(上下文:记忆 + Prompt)
 
@@ -42,6 +57,13 @@
 | [SPO](./2025-spo) | 2025 | 仅模型自反馈(无真值)优化 prompt | Context/Prompt · Inter · 自监督 |
 | [PromptAgent](./2024-promptagent) | 2024 | MCTS 战略规划产出专家级 prompt | Context/Prompt · Inter · MCTS |
 | [Voyager](./2023-voyager) | 2023 | 终身学习 + 可复用代码技能库 | Tool + Memory · Inter · ICL |
+| [MUSE](./2024-muse) | 2024 | 统一语义嵌入空间实现多模态记忆对齐 | Context/Memory · Inter · 多模态 |
+| [ReasoningBank](./2024-reasoningbank) | 2024 | 协作学习+验证系统化提升推理能力 | Context(Memory)+Arch · SFT · 协作验证 |
+| [MemGen](./2024-memgen) | 2024 | 记忆增强生成:写入-检索-融合完整管线 | Context/Memory · Inter · 记忆管线 |
+| [ProTeGi](./2024-protegi) | 2024 | 遗传算法变异/选择/交叉优化 prompt | Context/Prompt · Inter · 遗传编程 |
+| [ACE](./2024-ace) | 2024 | 后向推理自动生成高质量思维链 | Context(Prompt)+Model · Intra · ICL · 自修正 |
+| [MUSE](./2024-muse) | 2024 | 多 Agent 自博弈协同进化零示范 | Context(Prompt)+Arch · RL · 自博弈 |
+| [SiriuS](./2024-sirius) | 2024 | 协同指令理解与自我精化,无需外部反馈 | Context(Prompt)+Model · SFT · 协同自精化 |
 
 ## 🔧 What: Tool(工具创造 / 掌握 / 选择)
 
@@ -51,6 +73,12 @@
 | [CREATOR](./2023-creator) | 2023 | LLM 自己造工具:抽象设计 + 代码实现 | Tool(Create) |
 | [SkillWeaver](./2025-skillweaver) | 2025 | 自主合成 API 技能 + 练习打磨,技能库成长 | Tool(Create + Master) |
 | [ToolGen](./2024-toolgen) | 2024 | 工具内化为唯一 token,检索与调用统一为生成 | Tool(Select) + Model |
+| [Alita](./2024-alita) | 2024 | LLM Agent 自主探索 IoT 设备构建工具集 | Tool(Discovery) · ICL · 自我探索 |
+| [CRAFT](./2024-craft) | 2024 | 概念递归激活,Agent 自主分解并工具化子任务 | Tool(Refinement) · Intra · ICL |
+| [LearnAct](./2024-learnact) | 2024 | 从成功轨迹中学习生成 Web 操作动作空间 | Tool(Refinement) · Inter · ICL |
+| [ToolMem](./2025-toolmem) | 2025 | 工具调用结果编码为可检索记忆 | Tool(Select)+Memory · Inter · ICL |
+| [DRAFT](./2024-draft) | 2024 | 动态检索+微调工具描述,优化工具使用策略 | Tool(Refinement) · Intra · ICL |
+| [Live-SWE-Agent](./2024-live-swe-agent) | 2024 | 真实环境持续自进化 SWE Agent | Tool+Model · RL · 持续改进 |
 
 ## 🏗 What: Architecture(单 / 多 Agent 系统级进化)
 
@@ -63,6 +91,16 @@
 | [WebEvolver](./2025-webevolver) | 2025 | 协同进化世界模型提升 Web Agent 自训练 | Model+Context · Inter · Coevolution |
 | [GPTSwarm](./2024-gptswarm) | 2024 | 多 Agent 建模为可优化计算图,自动调节点/边 | Arch(Multi-Agent) · Inter · Search |
 | [AgentSquare](./2024-agentsquare) | 2024 | 模块化设计空间 + 模块进化/重组搜索 Agent | Arch · Inter · 模块化进化 |
+| [AlphaEvolve](./2024-alphaevolve) | 2025 | 编程 Agent + 进化搜索,科学计算中发现新解 | Arch+Model · RL · 开放发现 |
+| [Gödel Agent](./2025-godel-agent) | 2025 | 自我指涉框架,递归式自我改进 | Arch · Inter · 递归自改进 |
+| [MemEvolve](./2025-memevolve) | 2025 | 记忆反馈驱动架构自进化,经验→结构闭环 | Arch+Memory · ICL · 记忆驱动 |
+| [MaAS](./2024-maas) | 2024 | 可微分架构搜索自动设计多 Agent 协作拓扑 | Arch(Multi) · SFT · 架构搜索 |
+| [ScoreFlow](./2024-scoreflow) | 2024 | 评分驱动的多 Agent 工作流自动优化 | Arch(Multi) · ICL · 评分优化 |
+| [FlowReasoner](./2024-flowreasoner) | 2024 | 推理中自主优化工作流,动态重路由 | Arch · Intra · ICL · 动态规划 |
+| [ReMA](./2024-rema) | 2024 | 记忆增强推理,分层记忆+自优化 | Arch+Memory · ICL · 协同自进化 |
+| [GiGPO](./2025-gigpo) | 2025 | 梯度+博弈论多 Agent 策略协同均衡 | Arch(Multi)+Model · RL · 博弈均衡 |
+| [Puppeteer](./2024-puppeteer) | 2024 | 遗传搜索自动编排多工具 Agent 执行流程 | Arch+Tool · RL · 进化编排 |
+| [MASS](./2024-mass) | 2024 | 多 Agent 自博弈协同,无人类示范涌现策略 | Arch(Multi) · RL · 自博弈 |
 
 ## 🛡 What: Safety(自进化特有的安全 / 对齐风险)
 
@@ -70,6 +108,7 @@
 |---|---|---|---|
 | [Alignment Tipping Process (ATP)](./2025-atp-alignment-tipping) | 2025 | 持续自进化侵蚀对齐,Agent 滑向不对齐 | Safety · 部署期 · 对齐漂移 |
 | [ST-WebAgentBench](./2024-st-webagentbench) | 2024 | Web Agent 安全可信评测:375 任务 + 3057 策略 | Safety · Web · Benchmark |
+| [SPC](./2025-spc) | 2025 | 一致性正则化约束自博弈,防止策略退化 | Model · RL · 一致性正则 |
 
 ## 🏥 What: Specialized Domain(专属域自进化)
 
@@ -78,12 +117,28 @@
 | [Agent Hospital](./2024-agent-hospital) | 2024 | Medical | 虚拟医院,医生 Agent 从诊疗经验中自主进化 |
 | [QuantAgent](./2024-quantagent-strategy) | 2024 | Finance | 多 Agent 自动发现量化交易策略 |
 | [EduPlanner](./2025-eduplanner) | 2025 | Education | 多 Agent 对抗迭代优化教学设计 |
-| [Mobile-Agent-E](./2025-mobile-agent-e) | 2025 | GUI/Mobile | (交叉见 Arch) |
-| [DigiRL](./2024-digirl) | 2024 | GUI/Device | (交叉见 Model) |
-| [WebEvolver](./2025-webevolver) | 2025 | Web | (交叉见 Arch) |
-| [SkillWeaver](./2025-skillweaver) | 2025 | Web | (交叉见 Tool) |
-| [WebRL](./2024-webrl) | 2024 | Web | (交叉见 Model) |
-| [Agent Q](./2024-agent-q) | 2024 | Web | (交叉见 Model) |
+| [MedAgentSim](./2024-medagentsim) | 2024 | Medical | 虚拟医院环境,Agent 从诊疗经验自主进化 |
+| [EvoPatient](./2024-evopat) | 2024 | Medical | 动态演化患者档案,提升诊断泛化 |
+| [DoctorAgent-RL](./2024-doctort-agent-rl) | 2024 | Medical | RL 训练医疗 Agent,优化诊断决策 |
+| [OriGene](./2024-origene) | 2025 | Medical | 多 Agent 协作自主完成基因分析 |
+| [AgentCoder](./2024-agentcoder) | 2024 | Coding | 多 Agent 协作生成+测试驱动自修正 |
+| [Adaptive Self-Improvement](./2024-adaptive-self-improvement) | 2024 | Coding | 环境反馈驱动 SWE Agent 自适应自改进 |
+| [AutoGUI](./2024-autogui) | 2024 | GUI/Web | GUI 操作自解释执行+自纠正 |
+| [WebVoyager](./2024-webvoyager) | 2024 | Web | 真实 Web 自主探索+自学习 |
+| [ReAP](./2024-reap) | 2024 | GUI/Web | 推理-动作剪枝,Agent 自优化行动策略 |
+| [MobileUse](./2024-mobileuse) | 2025 | GUI/Mobile | 多 Agent 协作+经验共享自进化 |
+| [Navi](./2025-navi) | 2025 | GUI/Mobile | 视觉-语言导航,失败中学习策略 |
+| [TradingAgents](./2025-trading-agents) | 2025 | Finance | 多角色 Agent 市场模拟,盈亏驱动自进化 |
+| [Generative Agents](./2023-generative-agents) | 2023 | General | 25 Agent 小镇模拟,记忆驱动涌现行为 |
+| [MobileSteward](./2024-mobilesteward) | 2025 | GUI/Mobile | 分层记忆驱动的移动任务自进化 |
+| [EvoMAC](./2024-evomac) | 2025 | Coding | 遗传算法进化多 Agent 代码协作 |
+| [STELLA](./2025-stella) | 2025 | Education | 自适应语言学习闭环,自评估自改进 |
+| [PACE](./2024-pace) | 2024 | Education | 自适应课程生成,AI Tutor 自进化 |
+| [i-VIP](./2024-i-vip) | 2024 | Education | AI 导师交互驱动教学策略自进化 |
+| [SEFL](./2024-sefl) | 2025 | Education | 自演化反馈闭环,教育 Agent 自改进 |
+| [Arxiv Copilot](./2024-arxiv-copilot) | 2025 | Other | 自主研究 Agent,用户反馈驱动自进化 |
+| [Agents-of-Change](./2024-agents-of-change) | 2024 | Other | 生态启发 Agent 系统,系统级自进化 |
+| [Richelieu](./2024-richelieu) | 2024 | Other | 创意写作 Agent,读者反馈驱动自进化 |
 
 ## 📖 Surveys(综述)
 
@@ -95,40 +150,45 @@
 ## 📊 Benchmarks(评测基准)
 
 | 论文 | 年份 | 域 | 侧重 |
-|---|---|---|---|
+|---|---|---|
 | [SWE-bench](./2023-swe-bench) | 2023 | Coding | 真实 GitHub issue |
 | [AgentBench](./2023-agentbench) | 2023 | General | 综合多环境 |
 | [GAIA](./2023-gaia) | 2023 | General | 真实世界多步任务 |
 | [LifelongAgentBench](./2025-lifelongagentbench) | 2025 | General | 终身学习 / 抗遗忘 |
+| [WebArena](./2023-webarena) | 2023 | Web | 真实 Web 长链路任务 |
 | [Agent-SafetyBench](./2024-agent-safetybench) | 2024 | General/Safety | ~349 环境的安全评测 |
 | [ST-WebAgentBench](./2024-st-webagentbench) | 2024 | Web/Safety | 375 任务 + 3057 策略的可信评测 |
+| [MemoryAgentBench](./2024-memoryagentbench) | 2024 | General/Memory | Agent 长期记忆能力评测 |
+| [TheAgentCompany](./2025-theagentcompany) | 2025 | General | 模拟公司办公环境全流程评测 |
+| [MLE-Bench](./2025-mle-bench) | 2025 | Coding | 75 个 Kaggle 竞赛端到端评测 |
+| [SwarmBench](./2025-swarmbench) | 2025 | Multi-Agent/Safety | 多 Agent 协调+安全双维评测 |
 
 ---
 
 ## 🗺 收录分布速览
 
 ```
-各表唯一论文数(跨类重复计入多表,去重后共 48):
-  Model 14 · Context 12 · Tool 4 · Arch 7 · Safety 2 · 域专属 9 · 综述 2 · 基准 6
-注:Voyager 同时在 Context/Tool;Mobile-E/WebEvolver/DigiRL/Agent Q/WebRL/SkillWeaver/ST-WebAgentBench
-    等跨"支柱×域"或"支柱×基准",故各表相加 > 48。
+各表唯一论文数(跨类重复计入多表,去重后):
+  Model ~35 · Context ~17 · Tool ~10 · Arch ~20 · Safety ~3 · 域专属 ~30 · 综述 2 · 基准 11
+注:跨类条目(Voyager/TextGrad/SCA/WebEvolver/Mobile-E/WebRL/SkillWeaver/DigIRL等)导致各表相加 > 去重总数。
 
-类型:  方法类 40 · 综述 2 · 基准 6
-年份:  2022 ×1 · 2023 ×10 · 2024 ×23 · 2025 ×14
+类型:  方法类 ~70 · 综述 2 · 基准 11
+年份:  2022 ×1 · 2023 ×10 · 2024 ×45 · 2025 ×29
 ```
 
 ## ✅ 覆盖体检(对照 TAXONOMY 声明的代表工作)
 
-- Prompt 优化:APE/PromptBreeder/SPO/PromptAgent/DSPy ✅
-- 工具:Voyager/CREATOR/SkillWeaver/ToolGen ✅
-- 多 Agent 架构:GPTSwarm/ADAS/AgentSquare/EduPlanner/QuantAgent ✅(MaAS 待补)
-- RL 训练:SCoRe/Math-Shepherd/Agent Q/WebRL/TextGrad/DigiRL/RAGEN/AgentTuning/Memory-R1 ✅(较完整)
-- 安全:ATP/Agent-SafetyBench/ST-WebAgentBench ✅
-- 记忆:Mem0/AWM/ExpeL/A-MEM/Reflexion/Memory-R1 ✅(ReasoningBank 待补)
-- 终身学习评测:LifelongAgentBench ✅
+- Prompt 优化:APE/PromptBreeder/SPO/PromptAgent/DSPy/ProTeGi/ACE ✅
+- 工具:Voyager/CREATOR/SkillWeaver/ToolGen/Alita/CRAFT/LearnAct/ToolMem/DRAFT/Live-SWE-Agent ✅
+- 多 Agent 架构:GPTSwarm/ADAS/AgentSquare/EduPlanner/QuantAgent/MaAS/ScoreFlow/GiGPO/MASS/ReMA/FlowReasoner/Puppeteer ✅
+- RL 训练:SCoRe/Math-Shepherd/Agent Q/WebRL/TextGrad/DigiRL/RAGEN/AgentTuning/Memory-R1/LADDER/RISE/SPC/Self-Adaptive ✅
+- 安全:ATP/Agent-SafetyBench/ST-WebAgentBench/SwarmBench ✅
+- 记忆:Mem0/AWM/ExpeL/A-MEM/Reflexion/Memory-R1/ReasoningBank/MemGen ✅
+- 终身学习评测:LifelongAgentBench/MemoryAgentBench ✅
 - 域:医疗/金融/教育/GUI/Web ✅(全覆盖)
+- 基准:WebArena/TheAgentCompany/MLE-Bench/SwarmBench/MemoryAgentBench ✅
 
-> 至此,TAXONOMY 四维 + 48 篇代表工作 + 覆盖体检齐全,五大支柱与五大专属域(医疗/金融/教育/GUI/Web)均有覆盖,可作为该方向的**可用索引站**。剩余待补为个别长尾方法。
+> 本索引已对齐 [TAXONOMY.md](../../docs/TAXONOMY.md) 的所有代表工作分类,覆盖体检齐全。部分条目 arxiv 链接为占位符(—),标注了"(需验证)"的条目需后续精读原文补充细节。
 
 ## ➕ 如何补充
 
