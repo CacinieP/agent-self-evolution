@@ -1,8 +1,8 @@
-# DYSTIL: Dynamic Strategy Induction with Large Language Models for Reinforcement Learning
+# DYSTIL: Dynamic Strategy Induction with Large Language Models for RL
 
 - **作者**: Wang et al. (2025)
-- **发表**: arXiv:2506.15219 (待验证)
-- **链接**: https://arxiv.org/abs/2506.15219
+- **发表**: arXiv:2505.03209 (2025)
+- **链接**: https://arxiv.org/abs/2505.03209
 - **代码**: —
 
 ## 一句话总结
@@ -22,5 +22,3 @@ How:    Reward-based(轨迹分析) · Offline · On-policy · Process
 Where:  General
 Eval:   Retention, Generalization
 ```
-
-> ⚠️ **需验证**: arxiv ID 为占位符。标题来自 TAXONOMY 主骨架论文(arXiv:2507.21046)引用 bib.bib262。
