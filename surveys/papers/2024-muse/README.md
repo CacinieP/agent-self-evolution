@@ -1,24 +1,24 @@
-# MUSE: Machine Unification of Semantic Embeddings for Agent Memory
+# MUSE: Learning on the Job — An Experience-Driven Self-Evolving Agent for Long-Horizon Tasks
 
-- **作者**: Jixuan Chen et al.
-- **发表**: arXiv:2407.18956 (2024)
-- **链接**: https://arxiv.org/abs/2407.18956
+- **作者**: Yang et al. (2025)
+- **发表**: arXiv:2510.08002 (2025)
+- **链接**: https://arxiv.org/abs/2510.08002
 - **代码**: —
 
 ## 一句话总结
-通过统一语义嵌入空间实现多模态记忆的机器对齐,让 Agent 跨数据源的记忆检索更准确。
+经验驱动的自进化 Agent,通过层级记忆模块在长时任务中持续学习。
 
 ## 核心方法
-构建统一嵌入空间,将文本/代码/图像记忆映射到同一语义空间,支持跨模态记忆检索与融合。
+层级记忆模块(策略/程序/工具使用记忆),Plan-Execute-Reflect-Memorize 循环驱动自进化。
 
 ## 关键贡献
-证明多模态统一嵌入可显著提升跨域记忆检索质量,减少因模态差异导致的记忆碎片化。
+经验驱动的长时任务 Agent,在复杂多步任务上验证自进化效果。
 
 ## 维度速查 (TAXONOMY)
 ```
-What:   Context(Memory)
+What:   Context(Memory) + Model(Experience)
 When:   Inter-test-time × ICL
-How:    Reward-based(检索质量) · Offline · On-policy · Outcome
+How:    Reward-based · Online · On-policy · Process
 Where:  General
 Eval:   Adaptivity, Retention
 ```
