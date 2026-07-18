@@ -1,18 +1,18 @@
-# ToolMem: Tool-Enhanced Memory for LLM Agents
+# ToolMem: Enhancing Multimodal Agents with Learnable Tool Capability Memory
 
-- **作者**: Yifan Wang et al.
-- **发表**: arXiv:2503.07703 (2025)
-- **链接**: https://arxiv.org/abs/2503.07703
+- **作者**: Xiao et al. (2025)
+- **发表**: arXiv:2510.06664 (2025)
+- **链接**: https://arxiv.org/abs/2510.06664
 - **代码**: —
 
 ## 一句话总结
-将工具调用结果作为记忆的一部分,让 Agent 能检索和利用过去工具使用的经验。
+工具能力编码为可学习记忆,Agent 检索和利用过去工具使用的经验。
 
 ## 核心方法
-将工具调用(参数+结果+评估)编码为可检索记忆条目,与常规观察记忆统一管理,支持按工具类型和任务上下文检索。
+将工具调用编码为可检索记忆条目,Agent 根据任务上下文检索相关工具经验。
 
 ## 关键贡献
-工具记忆作为独立记忆维度,在多任务场景下显著减少重复工具调用失败。
+工具记忆作为独立记忆维度,减少重复工具调用失败。
 
 ## 维度速查 (TAXONOMY)
 ```
