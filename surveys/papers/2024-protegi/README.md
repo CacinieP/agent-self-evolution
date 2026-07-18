@@ -1,24 +1,24 @@
-# ProTeGi: Prompt Engineering with Targeted Improvement via Genetic Improvement
+# ProTeGi: Automatic Prompt Optimization with Textual Gradients
 
-- **作者**: Chrisantha Fernando, Tomoki Hayashi, Henryk Michalewski, Satoshi Takahashi
-- **发表**: arXiv:2402.11602 (2024)
-- **链接**: https://arxiv.org/abs/2402.11602
+- **作者**: Reid Pryzant, Dan Iter, Zhiting Hu
+- **发表**: arXiv:2305.03495 (2023)
+- **链接**: https://arxiv.org/abs/2305.03495
 - **代码**: —
 
 ## 一句话总结
-用遗传算法对 prompt 进行变异/选择/交叉,自动优化特定任务的提示词。
+用语言"梯度"(文本修正)自动优化 prompt,形成文本梯度下降。
 
 ## 核心方法
-将 prompt 视为"基因组",通过遗传编程的变异和交叉生成新 prompt,用验证集准确率作为适应度函数,迭代进化最优提示。
+模型生成自然语言"修正"作为 prompt 编辑,迭代优化直到验证集性能最佳。
 
 ## 关键贡献
-首次将遗传编程系统性地用于 prompt 优化,在 NLP 基准上超过手工调优和单步搜索方法。
+文本梯度下降在 prompt 优化上超越手工调优和离散搜索方法。
 
 ## 维度速查 (TAXONOMY)
 ```
 What:   Context(Prompt)
 When:   Inter-test-time × ICL
-How:    Population-based · Offline · Off-policy · Outcome
+How:    Reward-based(文本梯度) · Offline · Off-policy · Outcome
 Where:  General
 Eval:   Generalization
 ```
