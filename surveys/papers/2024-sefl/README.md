@@ -1,12 +1,12 @@
-# SEFL: Self-Evolving Feedback Loop for Education
+# SEFL: Harnessing Large Language Model Agents to Improve Educational Feedback
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2501.00000 (2025)
-- **链接**: https://arxiv.org/abs/2501.00000
+- **作者**: Zhang et al. (2025)
+- **发表**: arXiv:2502.12927 (2025)
+- **链接**: https://arxiv.org/abs/2502.12927
 - **代码**: —
 
 ## 一句话总结
-构建自演化反馈闭环,教育 Agent 通过分析学生回答自主改进评估和教学内容。
+LLM Agent 通过自演化反馈闭环改进教育评估质量。
 
 ## 核心方法
 Agent 分析学生回答中的错误模式,自动调整评估标准和教学内容,形成反馈驱动的自进化。
