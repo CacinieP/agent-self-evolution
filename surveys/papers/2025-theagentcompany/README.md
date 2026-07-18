@@ -1,8 +1,8 @@
-# TheAgentCompany: Benchmarking Agent Systems in Real-World Company Tasks
+# TheAgentCompany: Benchmarking LLM Agents on Consequential Real-World Company Tasks
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2412.00000 (2024)
-- **链接**: https://arxiv.org/abs/2412.00000
+- **作者**: Xu et al. (2024)
+- **发表**: arXiv:2412.14161 (2024)
+- **链接**: https://arxiv.org/abs/2412.14161
 - **代码**: —
 
 ## 一句话总结
