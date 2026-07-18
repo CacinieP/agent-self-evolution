@@ -1,8 +1,8 @@
 # SCA: Self-Challenging Language Model Agents
 
-- **作者**: Zhou et al.
-- **发表**: NeurIPS 2025
-- **链接**: https://arxiv.org/abs/2503.01203
+- **作者**: Yifei Zhou, Sergey Levine, Jason Weston, Xian Li, Sainbayar Sukhbaatar
+- **发表**: arXiv:2506.01716 (2025)
+- **链接**: https://arxiv.org/abs/2506.01716
 - **代码**: —
 
 ## 一句话总结
@@ -22,5 +22,3 @@ How:    Imitation/Experience · Offline · On-policy · Outcome
 Where:  General
 Eval:   Adaptivity, Generalization
 ```
-
-> ⚠️ **需验证**: arxiv ID 为占位符,需替换为正确编号。标题和描述来自 TAXONOMY 主骨架论文(arXiv:2507.21046)引用。
