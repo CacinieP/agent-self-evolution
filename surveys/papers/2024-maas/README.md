@@ -1,18 +1,18 @@
-# MaAS: Multi-Agent Architecture Search for Complex Task Solving
+# MaAS: Multi-Agent Architecture Search via Agentic Supernet
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2410.01234 (2024)
-- **链接**: https://arxiv.org/abs/2410.01234
+- **作者**: Guibin Zhang, Luyang Niu, Junfeng Fang, Kun Wang, Lei Bai, Xiang Wang
+- **发表**: arXiv:2502.04180 (2025)
+- **链接**: https://arxiv.org/abs/2502.04180
 - **代码**: —
 
 ## 一句话总结
-用可微分架构搜索自动设计最优多 Agent 协作拓扑。
+通过 Agentic Supernet 优化多 Agent 架构搜索,在连续概率分布中发现最优协作拓扑。
 
 ## 核心方法
-将多 Agent 协作建模为可微分图网络,通过梯度搜索优化 Agent 间通信模式和任务分配策略。
+构建 Agentic Supernet(概率连续架构分布),通过梯度优化搜索最优多 Agent 架构配置。
 
 ## 关键贡献
-将架构搜索引入多 Agent 系统设计,自动化发现比手工设计更优的协作拓扑。
+将架构搜索引入多 Agent 系统,自动化发现比手工设计更优的协作拓扑。
 
 ## 维度速查 (TAXONOMY)
 ```
