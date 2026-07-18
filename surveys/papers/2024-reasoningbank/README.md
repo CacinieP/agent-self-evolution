@@ -1,24 +1,24 @@
-# ReasoningBank: Scaling LLM Reasoning through Collaborative Learning and Verification
+# ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory
 
-- **作者**: Jiaqi Liu et al.
-- **发表**: arXiv:2410.01311 (2024)
-- **链接**: https://arxiv.org/abs/2410.01311
+- **作者**: Ouyang et al. (2025)
+- **发表**: ICLR 2026 / arXiv:2509.25140
+- **链接**: https://arxiv.org/abs/2509.25140
 - **代码**: —
 
 ## 一句话总结
-构建"推理银行"机制,通过协作学习与验证系统化提升 LLM 推理能力。
+推理记忆驱动 Agent 自进化,从成功/失败经验中提取可泛化推理策略。
 
 ## 核心方法
-Agent 将推理经验存入结构化"银行",通过验证模块筛选高质量推理路径,多 Agent 协作共同优化推理策略。
+从成功和失败经验中提炼可泛化推理策略,引入记忆感知的 test-time scaling 生成多样化经验。
 
 ## 关键贡献
-提出协作式推理增强框架,在数学和逻辑推理上验证多轮自改进的累积效果。
+推理记忆在 Agent 自进化中验证,超越传统经验回放方法。
 
 ## 维度速查 (TAXONOMY)
 ```
-What:   Context(Memory) + Architecture(Multi-Agent)
-When:   Inter-test-time × SFT
-How:    Reward-based(验证器) + Imitation · Offline+Online · Mixed · Hybrid
+What:   Context(Memory)
+When:   Inter-test-time × ICL
+How:    Reward-based · Offline · On-policy · Process
 Where:  General
-Eval:   Generalization, Efficiency
+Eval:   Adaptivity, Retention
 ```
