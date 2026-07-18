@@ -1,18 +1,18 @@
-# MemGen: Memory-Augmented Generation for LLM Agents
+# MemGen: Weaving Generative Latent Memory for Self-Evolving Agents
 
-- **作者**: Peifeng Wang et al.
-- **发表**: arXiv:2409.18409 (2024)
-- **链接**: https://arxiv.org/abs/2409.18409
+- **作者**: Guibin Zhang, Muxin Fu, Shuicheng Yan
+- **发表**: arXiv:2509.24704 (2025)
+- **链接**: https://arxiv.org/abs/2509.24704
 - **代码**: —
 
 ## 一句话总结
-构建记忆增强生成框架,让 Agent 在生成时主动检索和利用历史经验。
+动态生成式记忆框架,Agent 在推理全过程中主动回忆和增强记忆。
 
 ## 核心方法
-设计记忆写入(关键经验提取)→记忆检索(语义匹配)→记忆融合(注入生成)的三阶段流水线。
+Memory Trigger 监控推理状态 → Memory Weaver 构建隐式 token 序列作为机器原生记忆 → 在推理中自发回忆增强。
 
 ## 关键贡献
-将记忆管理从简单检索升级为"写入-检索-融合"完整管线,在开放域任务上验证效果。
+无需显式监督,Agent 自发发展类人记忆能力(规划/程序/工作记忆),超越 ExpeL 38.22%。
 
 ## 维度速查 (TAXONOMY)
 ```
