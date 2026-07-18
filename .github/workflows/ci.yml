@@ -1,0 +1,3 @@
+# CI workflow — disabled (local-only copy)
+# 原 CI 内容已移除所有触发条件,不会自动运行。
+# 如需重新启用,恢复 push / pull_request 触发器即可。
