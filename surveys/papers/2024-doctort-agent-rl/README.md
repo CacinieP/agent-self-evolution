@@ -1,22 +1,22 @@
-# DoctorAgent-RL: Reinforcement Learning for Medical Agent Training
+# DoctorAgent-RL: A Multi-Agent Collaborative Reinforcement Learning System
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2412.00000 (2024)
-- **链接**: https://arxiv.org/abs/2412.00000
+- **作者**: (2025)
+- **发表**: arXiv:2505.19630 (2025)
+- **链接**: https://arxiv.org/abs/2505.19630
 - **代码**: —
 
 ## 一句话总结
-用 RL 训练医疗 Agent 在诊断中做出最优决策序列。
+多 Agent RL 系统用于医疗诊断,优化诊断决策序列。
 
 ## 核心方法
-将医疗诊断建模为序列决策问题,用 RL 优化 Agent 的诊断策略,避免有害决策。
+将医疗诊断建模为序列决策问题,用多 Agent RL 优化诊断策略。
 
 ## 关键贡献
-RL 训练的医疗 Agent 在诊断准确性和安全性上显著超越 SFT baseline。
+RL 训练的医疗诊断 Agent 在准确性和安全性上显著超越 SFT baseline。
 
 ## 维度速查 (TAXONOMY)
 ```
-What:   Model(Policy)
+What:   Architecture(Multi-Agent) + Model(Policy)
 When:   Inter-test-time × RL
 How:    Reward-based(诊疗正确性) · Offline+Online · Mixed · Outcome
 Where:  Medical
