@@ -6,13 +6,13 @@
 - **代码**: —
 
 ## 一句话总结
-三个协作 Agent(程序员/测试设计器/测试执行器)迭代生成、测试、精化代码,在 HumanEval 上达到 96.3% pass@1。
+三个协作 Agent 迭代生成、测试、精化代码,在 HumanEval 上达到 96.3%。
 
 ## 核心方法
-Programmer Agent 写代码 → Test Designer 生成测试用例 → Test Executor 运行测试并反馈,迭代直到通过。
+Programmer/Test Designer/Test Executor 三个 Agent 协作,通过测试反馈循环驱动代码自修正。
 
 ## 关键贡献
-多 Agent 协作+测试驱动在 HumanEval/MBPP 上超越单 Agent 方法,降低 token 开销。
+多 Agent 协作+测试驱动在 HumanEval/MBPP 上超越单 Agent 方法。
 
 ## 维度速查 (TAXONOMY)
 ```
