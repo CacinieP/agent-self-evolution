@@ -5,7 +5,7 @@
 > A public repository for collecting and organizing **research and practice** on Agent Self-Evolution.
 
 [![License: MIT + CC BY 4.0](https://img.shields.io/badge/License-MIT%20code%20%2B%20CC%20BY%204.0%20docs-blue)](./LICENSE)
-[![Papers](https://img.shields.io/badge/Papers-48-9cf)](./surveys/papers)
+[![Papers](https://img.shields.io/badge/Papers-124-9cf)](./surveys/papers)
 [![Prototypes](https://img.shields.io/badge/Prototypes-4-green)](./practices/prototypes)
 [![Last Commit](https://img.shields.io/github/last-commit/CacinieP/agent-self-evolution)](https://github.com/CacinieP/agent-self-evolution/commits/main)
 [![Stars](https://img.shields.io/github/stars/CacinieP/agent-self-evolution?style=social)](https://github.com/CacinieP/agent-self-evolution/stargazers)
@@ -17,8 +17,8 @@
 | 我想要… | 去这里 |
 |---|---|
 | 看领域全貌 / 分类体系 | 🧭 [`docs/TAXONOMY.md`](docs/TAXONOMY.md)(对齐 2025 综述 What/When/How/Where) |
-| 读一篇**带观点**的综述 | 📝 [`docs/SURVEY.md`](docs/SURVEY.md)(基于 48 篇,含判断与路线图) |
-| 按支柱找论文 | 📚 [`surveys/papers/`](surveys/papers/README.md)(48 篇 + 覆盖体检表) |
+| 读一篇**带观点**的综述 | 📝 [`docs/SURVEY.md`](docs/SURVEY.md)(基于 124 篇,含判断与路线图) |
+| 按支柱找论文 | 📚 [`surveys/papers/`](surveys/papers/README.md)(124 篇 + 覆盖体检表) |
 | 跑一个自进化原型 | 🧪 [`practices/prototypes/`](practices/prototypes)(Self-Refine / Reflexion / Voyager / A-MEM,均可运行) |
 | 了解仓库怎么用 | 📖 [`docs/REPO_GUIDE.md`](docs/REPO_GUIDE.md) |
 | 贡献一篇论文 / 一个想法 | 🤝 [`CONTRIBUTING.md`](CONTRIBUTING.md) · [发起讨论](https://github.com/CacinieP/agent-self-evolution/discussions) |
@@ -40,17 +40,18 @@
 ```
 agent-self-evolution/
 ├── surveys/              # 调研:论文、综述、文章
-│   ├── papers/           #   论文 PDF / 链接 / 笔记
-│   ├── notes/            #   个人阅读笔记
-│   └── articles/         #   博客、技术文章、播客转写
+│   ├── papers/           #   论文 PDF / 链接 / 笔记(124 篇,核心内容)
+│   ├── notes/            #   个人阅读笔记(规划中)
+│   └── articles/         #   博客、技术文章、播客转写(规划中)
 ├── practices/            # 实践:实验、原型、片段
-│   ├── experiments/      #   正式实验(含数据/脚本/结果)
-│   ├── prototypes/       #   可运行的最小原型
-│   └── snippets/         #   有用的代码片段/工具
-├── benchmarks/           # 评测基准与排行榜记录
-├── resources/            # 演讲、slides、视频、相关仓库清单
+│   ├── experiments/      #   正式实验(规划中)
+│   ├── prototypes/       #   可运行的最小原型(4 个:Self-Refine/Reflexion/Voyager/A-MEM)
+│   └── snippets/         #   有用的代码片段/工具(规划中)
+├── benchmarks/           # 评测基准与排行榜记录(规划中)
+├── resources/            # 演讲、slides、视频、相关仓库清单(规划中)
 ├── docs/                 # 长文档:技术综述、路线图、术语表
-└── assets/               # 图片、图表等资源
+├── scripts/              # 校验脚本(论文模板/原型 selftest/链接检查)
+└── assets/               # 图片、图表等资源(规划中)
 ```
 
 详细说明见 [`docs/REPO_GUIDE.md`](docs/REPO_GUIDE.md)。

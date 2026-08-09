@@ -3,7 +3,7 @@
 > 按本仓库 [TAXONOMY](../../docs/TAXONOMY.md) 的 **What to Evolve** 四大支柱归类。
 > 命名规范:`<year>-<keyword>`。每篇一个目录,内含 `README.md`(元信息 + 维度速查)。
 
-收录数:**85**(种子 15 + batch2 8 + batch3 12 + batch4 8 + batch5 5 + TAXONOMY补齐 37,持续扩充)
+收录数:**124**(分布:2022 ×1 / 2023 ×12 / 2024 ×82 / 2025 ×29,持续扩充)
 
 ---
 

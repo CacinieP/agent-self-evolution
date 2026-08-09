@@ -1,6 +1,6 @@
 # Agent 自进化:从"工具使用者"到"自我改写者"
 
-> 一篇基于本仓库 48 篇文献的**带观点**综述。
+> 一篇基于本仓库 124 篇文献的**带观点**综述。
 > 分类体系与四维框架主要参照 [A Survey of Self-Evolving Agents (2025)](../surveys/papers/2025-survey-self-evolving-agents),配套索引见 [`TAXONOMY.md`](./TAXONOMY.md) 与 [`../surveys/papers/README.md`](../surveys/papers/README.md)。
 >
 > 本文不止罗列方法,更试图回答:**这门技术真正的分水岭在哪?哪些是噪音,哪些是信号?**
@@ -107,7 +107,7 @@
 
 ## 4. 评测的集体盲区
 
-读 48 篇后最强烈的感受:**方法跑得比评测快太多**。
+通读本仓库文献后最强烈的感受:**方法跑得比评测快太多**。
 
 - 现有基准([SWE-bench](../surveys/papers/2023-swe-bench)、[AgentBench](../surveys/papers/2023-agentbench)、[GAIA](../surveys/papers/2023-gaia))都是 **episodic**——任务间重置 Agent 状态。这**结构性测不出**自进化的核心价值:知识累积、跨任务迁移、抗遗忘。
 - [LifelongAgentBench](../surveys/papers/2025-lifelongagentbench) 是少数补丁,但仍属个例。
