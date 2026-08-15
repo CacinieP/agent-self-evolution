@@ -66,7 +66,8 @@
 ### 2.1 Intra-test-time(任务内实时进化)
 反馈与优化耦合于当前任务实例,**在线**进行。
 - **ICL**:Reflexion、Self-Refine、AdaPlanner、TrustAgent(反思/计划修正)
-- **SFT**:Self-Adaptive LM(自编辑触发即时微调)、TT-SI
+- **SFT**:TT-SI
+- **权重自适配(免训练)**:Self-Adaptive LM(Transformer-Squared,推理时实时重组权重)
 - **RL**:LADDER(test-time RL / TTRL,即时而学)
 
 ### 2.2 Inter-test-time(任务间回顾式进化)
@@ -83,9 +84,9 @@
 
 | 方法族 | 核心机制 | 代表 | 适用 / 权衡 |
 |---|---|---|---|
-| **Reward-based**(奖励驱动) | 文本反馈 / 内部置信度 / 外部奖励 / 隐式奖励 | Reflexion、Self-Rewarding LM、CISC、Math-Shepherd、"Reward Is Enough" | 灵活但敏感于奖励设计,易 reward hacking |
+| **Reward-based**(奖励驱动) | 文本反馈 / 内部置信度 / 外部奖励 / 隐式奖励 | Reflexion、Self-Rewarding LM、CISC、Math-Shepherd、"Reward Is Enough"、Puppeteer(编排器 RL) | 灵活但敏感于奖励设计,易 reward hacking |
 | **Imitation / Demonstration**(模仿示教) | 自生成或跨 Agent 的高质量完整示教 | STaR、V-STaR、AdaSTaR、SiriuS、RISE、Explore-to-Evolve | 高样本效率,但受示教质量/多样性限制 |
-| **Population-based / Evolutionary**(种群进化) | 选择/变异/交叉/竞争,群体并行 | DGM、SPIN、Absolute Zero、GENOME、EvoMAC、Puppeteer、SPC | 多样性与开放式发现,但算力高、可解释性弱 |
+| **Population-based / Evolutionary**(种群进化) | 选择/变异/交叉/竞争,群体并行 | DGM、SPIN、Absolute Zero、GENOME、EvoMAC、SPC | 多样性与开放式发现,但算力高、可解释性弱 |
 
 ### 3.2 三大横切维度(任意方法族都适用)
 

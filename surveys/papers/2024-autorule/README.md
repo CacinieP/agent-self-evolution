@@ -1,24 +1,24 @@
-# AutoRule: Automated Rule Generation for Agent Policy Improvement
+# AutoRule: Reasoning Chain-of-thought Extracted Rule-based Rewards Improve Preference Learning
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2412.00000 (2024)
-- **链接**: https://arxiv.org/abs/2412.00000
+- **作者**: Tevin Wang, Chenghao Xiong
+- **发表**: arXiv:2506.15651 (2025)
+- **链接**: https://arxiv.org/abs/2506.15651
 - **代码**: —
 
 ## 一句话总结
-Agent 从执行轨迹中自动提取规则,将隐式经验编码为显式策略规则。
+从推理链中自动提取显式规则,构造规则化奖励改进偏好学习。
 
 ## 核心方法
-分析成功/失败轨迹中的决策模式,自动生成可解释的 IF-THEN 规则更新策略。
+用 LLM 从思维链与偏好反馈中归纳可执行规则,将规则满足度转化为密集奖励信号用于偏好优化。
 
 ## 关键贡献
-可解释规则提取为 Agent 自进化提供可审计的改进机制。
+规则化奖励提升偏好学习质量,同时保持可解释性与可审计性。
 
 ## 维度速查 (TAXONOMY)
 ```
-What:   Model(Policy) + Context(Memory)
-When:   Inter-test-time × SFT
-How:    Reward-based · Offline · On-policy · Outcome
+What:   Model(Policy) + Context(Prompt)
+When:   Inter-test-time × RL
+How:    Reward-based(规则奖励) · Offline · On-policy · Outcome
 Where:  General
 Eval:   Adaptivity, Retention
 ```

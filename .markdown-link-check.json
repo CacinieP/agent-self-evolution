@@ -2,8 +2,5 @@
   "timeout": "20s",
   "retryOn429": true,
   "retryCount": 3,
-  "aliveStatusCodes": [200, 301, 302, 308, 403, 405, 429],
-  "ignorePatterns": [
-    { "pattern": "https://arxiv\\.org/abs/\\d{4}\\.00000" }
-  ]
+  "aliveStatusCodes": [200, 301, 302, 308, 403, 405, 429]
 }

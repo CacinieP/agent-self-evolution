@@ -1,7 +1,7 @@
 # MathVC: An LLM-Simulated Multi-Character Virtual Classroom for Mathematics
 
 - **作者**: Yue et al. (2025)
-- **发表**: arXiv:2404.06711 (2025)
+- **发表**: arXiv:2404.06711 (2024)
 - **链接**: https://arxiv.org/abs/2404.06711
 - **代码**: —
 

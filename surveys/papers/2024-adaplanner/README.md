@@ -1,15 +1,15 @@
-# AdaPlanner: Adaptive Planning with Language Feedback
+# AdaPlanner: Adaptive Planning from Feedback with Language Models
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2405.00000 (2024)
-- **链接**: https://arxiv.org/abs/2405.00000
+- **作者**: Haotian Sun et al.
+- **发表**: arXiv:2305.16653 (2023, NeurIPS 2023)
+- **链接**: https://arxiv.org/abs/2305.16653
 - **代码**: —
 
 ## 一句话总结
 Agent 在执行过程中根据语言反馈自适应调整规划,实现实时计划自进化。
 
 ## 核心方法
-在执行中根据环境反馈和语言评估动态重规划,自适应调整行动策略。
+闭环规划:先粗规划再执行,依据环境反馈与自我评估动态重规划,自适应调整行动策略。
 
 ## 关键贡献
 在线自适应规划在多步任务中显著优于静态预规划。

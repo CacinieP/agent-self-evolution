@@ -1,24 +1,24 @@
-# TrustAgent: Trustworthy Agent with Self-Verification
+# TrustAgent: Towards Safe and Trustworthy LLM-based Agents
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2410.00000 (2024)
-- **链接**: https://arxiv.org/abs/2410.00000
+- **作者**: Wenyue Hua et al.
+- **发表**: arXiv:2402.01586 (2024)
+- **链接**: https://arxiv.org/abs/2402.01586
 - **代码**: —
 
 ## 一句话总结
-Agent 在执行中通过自验证机制确保行为可靠性,实时纠正不安全动作。
+预训练-提示-控制三模块框架,全流程赋予 LLM Agent 安全意识与可信行为。
 
 ## 核心方法
-Agent 在执行前自检动作安全性,执行后验证结果正确性,在发现问题时主动回退。
+预训练阶段注入安全知识,推理阶段提示引导安全规划,工具层施加控制约束拦截不安全动作。
 
 ## 关键贡献
-自验证+自纠正机制在安全关键任务上显著降低有害行为率。
+覆盖训练-推理-执行全流程的 Agent 安全增强,兼顾知识注入与行为约束。
 
 ## 维度速查 (TAXONOMY)
 ```
-What:   Architecture(Single-agent) + Model(Policy)
-When:   Intra-test-time × ICL
-How:    Reward-based(自验证) · Online · On-policy · Process
+What:   Safety(预训练/提示/控制)
+When:   Inter-test-time × SFT
+How:    Constraint-based · Offline+Online · Outcome
 Where:  General
-Eval:   Safety, Adaptivity
+Eval:   Safety, Trustworthiness
 ```

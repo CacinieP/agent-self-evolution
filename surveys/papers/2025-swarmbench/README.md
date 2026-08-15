@@ -1,24 +1,24 @@
-# SwarmBench: Benchmarking Multi-Agent Coordination and Safety
+# SwarmBench: Benchmarking LLMs' Swarm Intelligence
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2501.00000 (2025)
-- **链接**: https://arxiv.org/abs/2501.00000
+- **作者**: Kai Ruan et al.
+- **发表**: arXiv:2505.04364 (2025)
+- **链接**: https://arxiv.org/abs/2505.04364
 - **代码**: —
 
 ## 一句话总结
-评测多 Agent 系统在协作任务中的协调能力,同时评估自进化带来的安全风险。
+首个评测 LLM 群体智能的基准:数学/排序/导航/匹配/迷宫五类群策任务。
 
 ## 核心方法
-设计需要多 Agent 紧密协调的复杂任务,在协作效率和安全合规两个维度全面评估。
+每类任务设定 swarming 规则,考察 LLM 在群体行为约束下的规划与协调能力。
 
 ## 关键贡献
-首个系统评测多 Agent 协调+安全双维度的基准,揭示自进化多 Agent 系统的安全挑战。
+揭示当前 SOTA LLM 在群体智能任务上表现不佳,开放全新评测维度。
 
 ## 维度速查 (TAXONOMY)
 ```
-What:   (Benchmark — Safety/Multi-Agent)
+What:   (Benchmark — Multi-Agent/Swarm)
 When:   —
 How:    —
 Where:  General
-Eval:   Safety, Adaptivity
+Eval:   Generalization, Adaptivity
 ```

@@ -1,18 +1,18 @@
-# MemoryAgentBench: Benchmarking Long-term Memory of Language Agents
+# MemoryAgentBench: Evaluating Memory in LLM Agents via Incremental Multi-Turn Interactions
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2410.00000 (2024)
-- **链接**: https://arxiv.org/abs/2410.00000
+- **作者**: Yuanzhe Hu et al.
+- **发表**: arXiv:2507.05257 (2025)
+- **链接**: https://arxiv.org/abs/2507.05257
 - **代码**: —
 
 ## 一句话总结
-专门评测 Agent 长期记忆能力,衡量记忆管理策略对多步任务的影响。
+增量多轮交互评测 LLM Agent 长期记忆的准确积累、更新与检索。
 
 ## 核心方法
-构造需要跨多个任务会话积累知识才能完成的任务,评估不同记忆策略的效果。
+构造跨会话的增量多轮任务,覆盖信息积累、更新与冲突消解等记忆能力,横向对比不同记忆管理策略。
 
 ## 关键贡献
-首个专注于 Agent 记忆能力评估的基准,量化不同记忆管理方案的优劣。
+系统化聚焦 Agent 记忆能力评估,量化不同记忆管理方案的优劣。
 
 ## 维度速查 (TAXONOMY)
 ```

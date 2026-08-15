@@ -1,24 +1,24 @@
-# EvoMAC: Evolutionary Multi-Agent Collaboration for Code Generation
+# Self-Evolving Multi-Agent Collaboration Networks for Software Development (EvoMAC)
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2501.00000 (2025)
-- **链接**: https://arxiv.org/abs/2501.00000
+- **作者**: Yue Hu et al.
+- **发表**: arXiv:2410.16946 (2024)
+- **链接**: https://arxiv.org/abs/2410.16946
 - **代码**: —
 
 ## 一句话总结
-通过进化算法优化多 Agent 协作模式,在代码生成任务上自进化 Agent 团队。
+自然选择式自进化多 Agent 协作网络,在软件开发任务上持续自我精化。
 
 ## 核心方法
-多个代码 Agent 通过遗传算法进化协作策略(角色分配/信息传递/代码审查),在 benchmark 上自评自选。
+借鉴传统软件工程阶段式开发,MAC 网络通过自然选择机制(含 agent dropout)迭代进化角色分配、信息传递与代码审查。
 
 ## 关键贡献
-证明进化多 Agent 协作可在代码生成上超越固定角色分配,实现团队级的自进化。
+证明多 Agent 协作网络可在代码生成上超越固定角色分配,实现团队级自进化。
 
 ## 维度速查 (TAXONOMY)
 ```
 What:   Architecture(Multi-Agent)
-When:   Inter-test-time × RL
-How:    Population-based · Online · On-policy · Outcome
+When:   Inter-test-time × ICL
+How:    Experience-based(ICL) · Online · Outcome
 Where:  Coding
 Eval:   Adaptivity, Generalization
 ```

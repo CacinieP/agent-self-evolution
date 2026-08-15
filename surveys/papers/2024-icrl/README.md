@@ -1,24 +1,24 @@
-# ICRL: In-Context Reinforcement Learning for Agents
+# Reward Is Enough: LLMs Are In-Context Reinforcement Learners (ICRL Prompting)
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2407.00000 (2024)
-- **链接**: https://arxiv.org/abs/2407.00000
+- **作者**: Kefan Song et al.
+- **发表**: arXiv:2506.06303 (2025)
+- **链接**: https://arxiv.org/abs/2506.06303
 - **代码**: —
 
 ## 一句话总结
-Agent 在上下文学习中进行类似强化学习的自进化,无需权重更新。
+多轮 ICRL 提示引导 LLM 在推理时执行"上下文内强化学习",无需参数更新即可自我改进。
 
 ## 核心方法
-设计 ICL 形式的 RL 信号,让 Agent 在推理时根据历史轨迹模拟 RL 更新过程。
+每轮生成后用奖励反馈重构下一轮提示,让 LLM 在前向传播中模拟 RL 的策略改进过程。
 
 ## 关键贡献
-ICL 框架下的自进化策略,在不更新权重的前提下实现类似 RL 的性能提升。
+理论与实验论证 LLM 天然具备上下文内 RL 能力,测试时自我改进成为通用范式。
 
 ## 维度速查 (TAXONOMY)
 ```
-What:   Context(Memory)
-When:   Inter-test-time × RL
-How:    Reward-based · Online · On-policy · Process
+What:   Context(Prompt)
+When:   Intra-test-time × RL
+How:    Reward-based · Online · On-policy · Outcome
 Where:  General
-Eval:   Adaptivity, Retention
+Eval:   Adaptivity
 ```

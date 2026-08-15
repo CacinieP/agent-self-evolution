@@ -1,24 +1,24 @@
-# TRACE: Teaching Language Models to Translate Natural Language to Executable Code
+# Trace Is the Next AutoDiff: Generative Optimization with Rich Feedback, Execution Traces, and LLMs (OptoPrime)
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2405.00000 (2024)
-- **链接**: https://arxiv.org/abs/2405.00000
-- **代码**: —
+- **作者**: Ching-An Cheng et al.
+- **发表**: arXiv:2406.16218 (2024)
+- **链接**: https://arxiv.org/abs/2406.16218
+- **代码**: https://github.com/microsoft/Trace
 
 ## 一句话总结
-通过可执行反馈自进化 LLM 的代码理解和生成能力。
+把 Agent 工作流视为可优化计算图,用执行轨迹与丰富反馈做"文字版自动微分"。
 
 ## 核心方法
-Agent 将自然语言需求翻译为可执行代码,通过执行结果自我评估和修正输出。
+将工作流参数(提示/代码)与执行轨迹统一建模为优化问题,LLM 优化器 OptoPrime 依据执行反馈联合更新。
 
 ## 关键贡献
-代码执行作为自反馈信号,在编程任务上实现无人工标注的自进化。
+统一 prompt 优化与工作流优化,为复合 Agent 系统提供通用优化框架。
 
 ## 维度速查 (TAXONOMY)
 ```
-What:   Model(Policy) + Tool
-When:   Intra-test-time × ICL
-How:    Reward-based(代码验证) · Online · On-policy · Process
-Where:  Coding
+What:   Context(Prompt) + Architecture(Workflow)
+When:   Inter-test-time × 反馈优化
+How:    Feedback-based(文字梯度) · Offline · Outcome
+Where:  General
 Eval:   Adaptivity, Generalization
 ```

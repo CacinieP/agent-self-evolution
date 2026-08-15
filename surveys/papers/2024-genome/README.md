@@ -1,24 +1,24 @@
-# GENOME: Genetic Evolution of Multi-Agent Architectures for Open-Ended Learning
+# Nature-Inspired Population-Based Evolution of Large Language Models (GENOME)
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2407.00000 (2024)
-- **链接**: https://arxiv.org/abs/2407.00000
+- **作者**: Yiqun Zhang et al.
+- **发表**: arXiv:2503.01155 (2025)
+- **链接**: https://arxiv.org/abs/2503.01155
 - **代码**: —
 
 ## 一句话总结
-用遗传算法进化多 Agent 系统架构,在开放-ended 环境中实现架构自演化。
+用遗传算法等自然启发的群体进化直接在参数空间优化 LLM,无需梯度。
 
 ## 核心方法
-将多 Agent 架构编码为基因组,通过选择/变异/交叉操作迭代搜索最优协作拓扑和策略组合。
+维护 LLM 权重"种群",施加选择/交叉/变异算子迭代进化;GENOME+ 进一步引入粒子群优化的继承机制与集成方法。
 
 ## 关键贡献
-开放-ended 遗传搜索可发现超越人工设计的 Agent 协作模式,在复杂环境中验证涌现行为。
+证明无梯度群体进化可有效提升模型能力,为参数级自进化开辟新路径。
 
 ## 维度速查 (TAXONOMY)
 ```
-What:   Architecture(Multi-Agent)
-When:   Inter-test-time × RL
-How:    Population-based(Evolutionary) · Online · On-policy · Outcome
+What:   Model(参数/权重)
+When:   Inter-test-time × 进化算法
+How:    Population-based(Evolutionary) · Offline · Outcome
 Where:  General
-Eval:   Adaptivity, Generalization
+Eval:   Adaptivity, Efficiency
 ```

@@ -1,24 +1,24 @@
-# OriGene: Orchestrating Multiple LLM Agents for Genetic Analysis
+# OriGene: A Self-Evolving Virtual Disease Biologist Automating Therapeutic Target Discovery
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2501.00000 (2025)
-- **链接**: https://arxiv.org/abs/2501.00000
+- **作者**: Zhang et al. (2025)
+- **发表**: bioRxiv:2025.06.03.657658 (2025)
+- **链接**: https://www.biorxiv.org/content/10.1101/2025.06.03.657658v1
 - **代码**: —
 
 ## 一句话总结
-多 Agent 协作自主完成基因分析全流程,Agent 间经验共享驱动自进化。
+自进化的"虚拟疾病生物学家",自动完成治疗靶点发现全流程。
 
 ## 核心方法
-构建文献检索/实验设计/数据分析/报告生成四阶段多 Agent 流水线,通过经验共享库实现跨任务自改进。
+整合文献与数据库知识,迭代进行基因-疾病假说生成与实验反馈精炼;能识别自身知识缺口并更新核心推理模板。
 
 ## 关键贡献
-多 Agent 协同在复杂科研任务中实现端到端自主和持续改进。
+生物医药发现场景的自进化 Agent,持续迭代提升靶点发现质量。
 
 ## 维度速查 (TAXONOMY)
 ```
-What:   Architecture(Multi-Agent)
+What:   Architecture(Multi-Agent) + Context(Memory)
 When:   Inter-test-time × ICL
-How:    Reward-based(分析质量) · Online · Mixed · Hybrid
+How:    Experience-based(反馈精炼) · Online · Outcome
 Where:  Medical
 Eval:   Generalization, Efficiency
 ```

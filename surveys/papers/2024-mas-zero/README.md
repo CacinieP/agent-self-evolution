@@ -1,8 +1,8 @@
 # MAS-Zero: Designing Multi-Agent Systems with Zero Supervision
 
 - **作者**: Ke et al. (2025)
-- **发表**: arXiv:2505.09996 (2025)
-- **链接**: https://arxiv.org/abs/2505.09996
+- **发表**: arXiv:2505.14996 (2025)
+- **链接**: https://arxiv.org/abs/2505.14996
 - **代码**: —
 
 ## 一句话总结

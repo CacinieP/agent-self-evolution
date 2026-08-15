@@ -1,24 +1,24 @@
-# RISE: Reinforcement Learning with Importance Sampling for LLM Reasoning
+# Recursive Introspection: Teaching Language Model Agents How to Self-Improve (RISE)
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2501.00000 (2025)
-- **链接**: https://arxiv.org/abs/2501.00000
+- **作者**: Yuxiao Qu et al.
+- **发表**: arXiv:2407.18219 (2024, NeurIPS 2024)
+- **链接**: https://arxiv.org/abs/2407.18219
 - **代码**: —
 
 ## 一句话总结
-用重要性采样增强 RL 训练 LLM 推理,避免策略退化的自举机制。
+把多轮自我改进建模为在线多轮 RL,训练模型在测试时"递归内省"持续改进自身输出。
 
 ## 核心方法
-在 RL 训练中引入重要性采样校正,使 Agent 能从历史异构数据中学习而不会偏离当前策略。
+自模仿蒸馏 + 重要性采样处理自生成数据的分布失配,将弱基座模型转化为多轮自我改进的推理器。
 
 ## 关键贡献
-解决 RL 训练中自生成数据导致的策略偏移问题,在推理任务上实现稳定自进化。
+Llama2/3、Mistral 等模型随轮数增加持续提升数学推理表现,优于自一致性等策略。
 
 ## 维度速查 (TAXONOMY)
 ```
 What:   Model(Policy)
-When:   Inter-test-time × RL
-How:    Reward-based(RL) · Offline+Online · Mixed · Process
+When:   Intra-test-time × RL
+How:    Reward-based(RL) · Online · On-policy · Process
 Where:  General(推理)
 Eval:   Adaptivity, Retention
 ```

@@ -1,24 +1,24 @@
-# Puppeteer: Automated Agent Orchestration via Evolutionary Search
+# Multi-Agent Collaboration via Evolving Orchestration (Puppeteer)
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2412.00000 (2024)
-- **链接**: https://arxiv.org/abs/2412.00000
+- **作者**: Yufan Dang et al.
+- **发表**: arXiv:2505.19591 (2025)
+- **链接**: https://arxiv.org/abs/2505.19591
 - **代码**: —
 
 ## 一句话总结
-用进化搜索自动编排多工具 Agent 执行流程,无需人工设计编排策略。
+"提线木偶"范式:中央编排器(puppeteer)随任务状态动态指挥多 Agent(puppets),编排策略可进化。
 
 ## 核心方法
-将 Agent 编排策略编码为可进化结构,通过遗传算法搜索最优工具调用序列和决策分支。
+集中式编排器按任务状态调度各 Agent,通过强化学习(含步级成本惩罚)训练编排策略。
 
 ## 关键贡献
-自动化 Agent 编排设计,在复杂工具链任务上超越手工编排的性能。
+在协作层面实现架构进化,随任务复杂度与 Agent 数量增长仍保持可扩展性。
 
 ## 维度速查 (TAXONOMY)
 ```
-What:   Architecture(Single-agent) + Tool
+What:   Architecture(Multi-Agent)
 When:   Inter-test-time × RL
-How:    Population-based · Online · On-policy · Outcome
+How:    Reward-based(RL) · Online · On-policy · Outcome
 Where:  General
-Eval:   Generalization, Efficiency
+Eval:   Adaptivity, Efficiency
 ```

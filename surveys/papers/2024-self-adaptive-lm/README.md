@@ -1,24 +1,24 @@
-# Self-Adaptive LM: Language Models That Adapt During Inference
+# Transformer-Squared: Self-Adaptive LLMs
 
-- **作者**: (Multiple authors)
-- **发表**: arXiv:2407.00000 (2024)
-- **链接**: https://arxiv.org/abs/2407.00000
+- **作者**: Qi Sun et al.
+- **发表**: arXiv:2501.06252 (2025)
+- **链接**: https://arxiv.org/abs/2501.06252
 - **代码**: —
 
 ## 一句话总结
-LLM 在推理过程中自适应调整生成策略,根据反馈信号实时自改进。
+推理时实时自适配:按任务选择性调整权重的奇异分量,两阶段完成自我进化。
 
 ## 核心方法
-在推理链中嵌入自适应模块,根据当前生成质量自动调整采样策略和生成路径。
+对权重做 SVD 分解;推理中先提示模型自我识别任务属性,再在线选择/组合 LoRA 专家实时重组权重。
 
 ## 关键贡献
-推理过程中的自适应调整在数学和代码推理上提升成功率。
+无需重新训练的实时任务自适配,在推理与理解任务上同时提升性能与效率。
 
 ## 维度速查 (TAXONOMY)
 ```
-What:   Model(Policy)
-When:   Intra-test-time × SFT
-How:    Reward-based · Online · On-policy · Process
+What:   Model(参数)
+When:   Intra-test-time × 自适配
+How:    Self-adaptive(SVD+专家选择) · Online · Process
 Where:  General
 Eval:   Adaptivity, Efficiency
 ```
