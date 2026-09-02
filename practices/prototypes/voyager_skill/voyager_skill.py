@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import argparse
 import os
+import re
 import sys
 from dataclasses import dataclass, field
 from typing import Callable
@@ -64,7 +65,7 @@ def _build_mock_fn() -> LLMFn:
     def _fn(prompt: str) -> str:
         state["n"] += 1
         if prompt.startswith("ABSTRACT"):
-            return f"技能:按 [主题] 用 [四行] 押韵结构快速成诗。"
+            return "技能:按 [主题] 用 [四行] 押韵结构快速成诗。"
         if prompt.startswith("VERIFY"):
             return "PASS"
         # 求解:若有复用技能提示,标注"复用";否则"从零"
@@ -113,11 +114,17 @@ class Run:
     solution: str
     reused: bool
     passed: bool
+    attempts: int
     new_skill: str = ""
 
 
-def _verify(llm: LLMFn, task: str, solution: str) -> bool:
-    return "PASS" in llm(f"VERIFY\n任务: {task}\n方案: {solution}\n该方案是否基本可用?只回 PASS 或 FAIL。")
+def _verify(llm: LLMFn, task: str, solution: str) -> tuple[bool, str]:
+    response = llm(
+        f"VERIFY\n任务: {task}\n方案: {solution}\n"
+        "该方案是否基本可用?第一行只回 PASS 或 FAIL;若为 FAIL,可在后续说明原因。"
+    ).strip()
+    match = re.match(r"^(PASS|FAIL)\b", response, re.IGNORECASE)
+    return bool(match and match.group(1).upper() == "PASS"), response
 
 
 def _abstract(llm: LLMFn, task: str, solution: str) -> tuple[str, str]:
@@ -128,20 +135,45 @@ def _abstract(llm: LLMFn, task: str, solution: str) -> tuple[str, str]:
     return name, out
 
 
-def solve_task(task: str, llm: LLMFn, lib: SkillLibrary) -> Run:
+def solve_task(task: str, llm: LLMFn, lib: SkillLibrary, retries: int = 1) -> Run:
+    if retries < 0:
+        raise ValueError("retries must be non-negative")
+
     hits = lib.retrieve(task)
     reused = bool(hits)
     skill_hint = hits[0].solution if hits else "无"
 
-    prompt = (
-        f"任务: {task}\n"
-        f"可复用技能: {skill_hint}\n\n"
-        "请给出解决方案。若有可复用技能,请基于它适配。"
-    )
-    solution = llm(prompt)
-    passed = _verify(llm, task, solution)
+    solution = ""
+    verdict = ""
+    passed = False
+    attempts = 0
+    for attempts in range(1, retries + 2):
+        if attempts == 1:
+            prompt = (
+                f"任务: {task}\n"
+                f"可复用技能: {skill_hint}\n\n"
+                "请给出解决方案。若有可复用技能,请基于它适配。"
+            )
+        else:
+            prompt = (
+                f"任务: {task}\n"
+                f"可复用技能: {skill_hint}\n"
+                f"上次方案: {solution}\n"
+                f"验证反馈: {verdict}\n\n"
+                "请根据验证反馈修正方案,不要重复同一错误。"
+            )
+        solution = llm(prompt)
+        passed, verdict = _verify(llm, task, solution)
+        if passed:
+            break
 
-    run = Run(task=task, solution=solution, reused=reused, passed=passed)
+    run = Run(
+        task=task,
+        solution=solution,
+        reused=reused,
+        passed=passed,
+        attempts=attempts,
+    )
 
     if passed:
         # 成功 -> 抽象成技能存库(无论是否复用,新解法也可沉淀)
@@ -164,9 +196,13 @@ def main() -> None:
     g.add_argument("--task", help="单个任务")
     g.add_argument("--tasks", nargs="+", help="多个任务(顺序执行,共享技能库)")
     p.add_argument("--model", default="gpt-4o-mini")
+    p.add_argument("--retries", type=int, default=1, help="验证失败后的最大重试次数(默认 1)")
     p.add_argument("--mock", action="store_true")
     p.add_argument("--selftest", action="store_true", help="内置示例自测(强制 mock)")
     args = p.parse_args()
+
+    if args.retries < 0:
+        p.error("--retries 不能为负数")
 
     if args.selftest:
         args.mock = True
@@ -180,11 +216,12 @@ def main() -> None:
 
     print(f"=== Voyager 技能库原型 | {len(tasks)} 个任务 ===\n")
     for i, task in enumerate(tasks, 1):
-        r = solve_task(task, llm, lib)
+        r = solve_task(task, llm, lib, retries=args.retries)
         mode = "♻️ 复用" if r.reused else "✨ 新建"
         res = "✅" if r.passed else "❌"
         print(f"[{i}] {res} {mode}  任务: {task}")
         print(f"     方案: {r.solution[:80]}")
+        print(f"     尝试次数: {r.attempts}")
         if r.new_skill:
             print(f"     + 入库技能: {r.new_skill}")
         print(f"     技能库规模: {len(lib.skills)}")

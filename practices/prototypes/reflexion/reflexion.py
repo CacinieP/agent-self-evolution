@@ -13,7 +13,7 @@ Reflexion 最小可运行原型(环境反馈版)
 用法:
     # 真实模型
     export OPENAI_API_KEY=sk-...
-    python reflexion.py --task "写函数 is_prime(n): 判断 n 是否为素数" --trials 3
+    python reflexion.py --task "写函数 is_prime(n): 判断 n 是否为素数" --trials 3 --allow-unsafe-exec
 
     # 离线 mock(无需 API,可观察"记忆累积"逻辑)
     python reflexion.py --mock --task "写函数 is_prime(n)" --trials 3
@@ -22,11 +22,13 @@ Reflexion 最小可运行原型(环境反馈版)
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import re
+import subprocess
 import sys
 import textwrap
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Callable
 
 LLMFn = Callable[[str], str]
@@ -86,31 +88,84 @@ DEFAULT_TESTS = [
     ("is_prime(-3)", False),
 ]
 
+_RESULT_PREFIX = "__REFLEXION_RESULT__"
+_TEST_RUNNER = r'''
+import json
+import sys
+
+PREFIX = "__REFLEXION_RESULT__"
+payload = json.loads(sys.stdin.read())
+namespace = {}
+
+try:
+    exec(payload["code"], namespace)
+except BaseException as exc:
+    result = {
+        "ok": False,
+        "diag": f"代码执行抛异常: {type(exc).__name__}: {exc}",
+    }
+else:
+    failures = []
+    for expression, expected in payload["tests"]:
+        try:
+            actual = eval(expression, namespace)
+        except BaseException as exc:
+            failures.append(f"  {expression} -> 抛异常 {type(exc).__name__}")
+            continue
+        if actual != expected:
+            failures.append(f"  {expression} -> 得到 {actual!r},期望 {expected!r}")
+    result = {
+        "ok": not failures,
+        "diag": "全部测试通过 ✅" if not failures else "未通过的用例:\n" + "\n".join(failures),
+    }
+
+print(PREFIX + json.dumps(result, ensure_ascii=False))
+'''
+
 
 def _extract_code(text: str) -> str:
     m = re.search(r"```(?:python)?\s*(.*?)```", text, re.S)
     return (m.group(1) if m else text).strip()
 
 
-def run_tests(code: str, tests: list[tuple[str, bool]]) -> tuple[bool, str]:
-    """在隔离命名空间执行 code,跑 tests。返回 (是否全过, 诊断信息)。"""
-    ns: dict = {}
+def run_tests(
+    code: str,
+    tests: list[tuple[str, bool]],
+    timeout: float = 5.0,
+) -> tuple[bool, str]:
+    """在独立 Python 子进程中执行 code 并跑 tests。
+
+    子进程与超时可隔离崩溃和死循环，但这不是安全沙箱；调用方仍须只执行
+    可信代码，或在容器/受限解释器中运行整个原型。
+    """
+    payload = json.dumps({"code": code, "tests": tests}, ensure_ascii=False)
+    child_env = {"PYTHONIOENCODING": "utf-8"}
+    for name in ("SYSTEMROOT", "WINDIR"):
+        if name in os.environ:  # Windows 启动 Python 可能需要
+            child_env[name] = os.environ[name]
     try:
-        exec(code, ns)
-    except Exception as e:  # noqa: BLE001
-        return False, f"代码执行抛异常: {type(e).__name__}: {e}"
-    fails = []
-    for expr, expected in tests:
-        try:
-            got = eval(expr, ns)  # noqa: S307
-        except Exception as e:  # noqa: BLE001
-            fails.append(f"  {expr} -> 抛异常 {type(e).__name__}")
-            continue
-        if got != expected:
-            fails.append(f"  {expr} -> 得到 {got!r},期望 {expected!r}")
-    if fails:
-        return False, "未通过的用例:\n" + "\n".join(fails)
-    return True, "全部测试通过 ✅"
+        proc = subprocess.run(
+            [sys.executable, "-I", "-c", _TEST_RUNNER],
+            input=payload,
+            capture_output=True,
+            text=True,
+            timeout=timeout,
+            env=child_env,
+        )
+    except subprocess.TimeoutExpired:
+        return False, f"代码执行超时(>{timeout:g}s)"
+
+    for line in reversed(proc.stdout.splitlines()):
+        if line.startswith(_RESULT_PREFIX):
+            try:
+                result = json.loads(line[len(_RESULT_PREFIX):])
+            except json.JSONDecodeError:
+                break
+            return bool(result["ok"]), str(result["diag"])
+
+    detail = (proc.stderr or proc.stdout).strip().splitlines()
+    tail = detail[-1] if detail else f"子进程退出码 {proc.returncode}"
+    return False, f"测试子进程未返回有效结果: {tail}"
 
 
 # ---------------------------------------------------------------------------
@@ -127,7 +182,13 @@ class Trial:
     reflection: str = ""
 
 
-def reflexion(task: str, llm: LLMFn, trials: int, tests: list[tuple[str, bool]]) -> tuple[list[Trial], list[str]]:
+def reflexion(
+    task: str,
+    llm: LLMFn,
+    trials: int,
+    tests: list[tuple[str, bool]],
+    exec_timeout: float = 5.0,
+) -> tuple[list[Trial], list[str]]:
     memory: list[str] = []          # 历史反思(持久记忆)
     history: list[Trial] = []
 
@@ -144,7 +205,7 @@ def reflexion(task: str, llm: LLMFn, trials: int, tests: list[tuple[str, bool]])
         raw = llm(act_prompt)
         code = _extract_code(raw)
 
-        passed, diag = run_tests(code, tests)
+        passed, diag = run_tests(code, tests, timeout=exec_timeout)
         t = Trial(i, code, passed, diag)
 
         if passed:
@@ -174,21 +235,40 @@ def reflexion(task: str, llm: LLMFn, trials: int, tests: list[tuple[str, bool]])
 
 def main() -> None:
     p = argparse.ArgumentParser(description="Reflexion 最小可运行原型(环境反馈版)")
-    p.add_argument("--task", help="编程任务描述(--selftest 时可省)")
+    p.add_argument("--task", help="编程任务描述；内置测试要求实现 is_prime(n)(--selftest 时可省)")
     p.add_argument("--trials", type=int, default=3)
+    p.add_argument("--exec-timeout", type=float, default=5.0, help="每次候选代码的执行超时秒数(默认 5)")
     p.add_argument("--model", default="gpt-4o-mini")
     p.add_argument("--mock", action="store_true")
+    p.add_argument(
+        "--allow-unsafe-exec",
+        action="store_true",
+        help="确认允许执行模型生成的代码；真实模型模式必填(子进程不是安全沙箱)",
+    )
     p.add_argument("--selftest", action="store_true", help="内置示例自测(强制 mock)")
     args = p.parse_args()
+
+    if args.trials < 1:
+        p.error("--trials 必须至少为 1")
+    if args.exec_timeout <= 0:
+        p.error("--exec-timeout 必须大于 0")
 
     if args.selftest:
         args.mock = True
         args.task = args.task or "写函数 is_prime(n): 判断 n 是否为素数"
     elif not args.task:
         p.error("--task 为必填(或使用 --selftest 自测)")
+    elif not args.mock and not args.allow_unsafe_exec:
+        p.error("真实模型模式会执行模型生成的代码；确认风险后请添加 --allow-unsafe-exec")
 
     llm = _build_mock_fn() if args.mock else _build_openai_fn(args.model)
-    history, memory = reflexion(args.task, llm, args.trials, DEFAULT_TESTS)
+    history, memory = reflexion(
+        args.task,
+        llm,
+        args.trials,
+        DEFAULT_TESTS,
+        exec_timeout=args.exec_timeout,
+    )
 
     print(f"=== Task ===\n{args.task}\n")
     for t in history:

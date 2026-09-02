@@ -172,8 +172,12 @@ def main() -> None:
     p.add_argument("--iters", type=int, default=3, help="最多迭代次数(默认 3)")
     p.add_argument("--model", default="gpt-4o-mini", help="模型名(OpenAI 兼容)")
     p.add_argument("--mock", action="store_true", help="离线 mock 模式,无需 API")
+    p.add_argument("--early-stop", action="store_true", help="反馈表示无需修改时提前停止")
     p.add_argument("--selftest", action="store_true", help="内置示例自测(强制 mock,供 CI/脚本调用)")
     args = p.parse_args()
+
+    if args.iters < 0:
+        p.error("--iters 不能为负数")
 
     if args.selftest:
         args.mock = True
@@ -185,7 +189,12 @@ def main() -> None:
     llm = _build_mock_fn() if args.mock else _build_openai_fn(args.model)
 
     print(f"=== Task ===\n{args.task}\n")
-    history = self_refine(args.task, llm, iters=args.iters)
+    history = self_refine(
+        args.task,
+        llm,
+        iters=args.iters,
+        stop_on_no_feedback=args.early_stop,
+    )
 
     for step in history:
         label = "初稿" if step.iteration == 0 else f"第 {step.iteration} 轮"

@@ -38,7 +38,7 @@ recall            :检索时不只召回单点,而是沿链接召回关联网络
 # 离线 mock:观察笔记建链、关联召回(演化需真实 embedding 才频繁触发)
 python amem.py --mock --inputs "猫是肉食动物" "猫科动物包括老虎" "老虎是大型猫科" "Python是编程语言"
 
-# 真实模型(LLM 抽取笔记内容,语义更准)
+# 真实模型(LLM 把输入抽取成更结构化的笔记;建链仍使用字符 Jaccard)
 pip install -r requirements.txt
 export OPENAI_API_KEY=sk-...
 python amem.py --inputs "RL 是用奖励信号优化策略的方法" "强化学习依赖环境反馈" "Transformer 是主流架构" --model gpt-4o-mini

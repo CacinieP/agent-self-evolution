@@ -39,7 +39,7 @@ python self_refine.py --task "用一句话解释什么是 RLHF" --iters 3 --mode
 
 - **统一 LLM 抽象**:`LLMFn = Callable[[str], str]`,真实 / mock 后端可互换。
 - **三步解耦**:`generate / feedback / refine` 各自独立,便于替换或扩展。
-- **早停启发式**:当反馈被判定为"已满意"(无实质建议)时提前终止,避免无谓迭代。
+- **可选早停启发式**:传入 `--early-stop` 后,当反馈被判定为"已满意"(无实质建议)时提前终止,避免无谓迭代。
 - **迭代轨迹可追溯**:返回 `list[Step]`,记录每轮的输出与反馈。
 
 ## 🔧 可玩的扩展方向

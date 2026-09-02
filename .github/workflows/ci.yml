@@ -22,6 +22,9 @@ jobs:
       - name: 校验原型 mock 可运行
         run: python scripts/check_prototypes.py
 
+      - name: 原型回归测试
+        run: python -m unittest discover -s scripts -p "test_*.py" -v
+
       - name: 校验内部相对链接(全仓)
         run: |
           python - <<'PY'
@@ -40,10 +43,11 @@ jobs:
           PY
 
       - name: 校验外部 Markdown 链接有效性
-        uses: gaurav-nelson/github-action-markdown-link-check@v1
+        uses: tcort/github-action-markdown-link-check@v1
         with:
           use-quiet-mode: "yes"
           use-verbose-mode: "yes"
           config-file: ".markdown-link-check.json"
           folder-path: "surveys/papers,docs,practices"
+          file-path: "README.md,CONTRIBUTING.md"
           max-depth: 2

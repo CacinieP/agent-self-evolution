@@ -8,7 +8,7 @@
 [![Papers](https://img.shields.io/badge/Papers-124-9cf)](./surveys/papers)
 [![Prototypes](https://img.shields.io/badge/Prototypes-4-green)](./practices/prototypes)
 [![Last Commit](https://img.shields.io/github/last-commit/CacinieP/agent-self-evolution)](https://github.com/CacinieP/agent-self-evolution/commits/main)
-[![Stars](https://img.shields.io/github/stars/CacinieP/agent-self-evolution?style=social)](https://github.com/CacinieP/agent-self-evolution/stargazers)
+[![Stars](https://img.shields.io/github/stars/CacinieP/agent-self-evolution?style=social)](https://github.com/CacinieP/agent-self-evolution)
 
 本仓库致力于系统性地归档与"Agent 自进化(Self-Evolution)"相关的论文、综述、文章、实验、原型与代码片段,方便研究者与工程师追踪该方向的最新进展,并复现/扩展其中的方法。
 
